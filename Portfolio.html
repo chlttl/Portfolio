@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최찬우 | Game Planner Portfolio</title>
+  <style>
+    /* Global Styles */
+    :root {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --card-hover-bg: #282828;
+      --text-main: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --accent-primary: #00e5ff; /* 강조색: 시안/터콰이즈 */
+      --accent-secondary: #ffb703; /* 포인트: 골드 */
+      --border-color: #333333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+
+    /* Header Profile */
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .profile-title {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--accent-primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-info a {
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent-primary);
+    }
+
+    /* Section Common */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #ffffff;
+      border-left: 4px solid var(--accent-primary);
+      padding-left: 0.75rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Education List */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      background: var(--card-bg);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .edu-school {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .edu-dept {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .edu-date {
+      color: var(--accent-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Project Cards */
+    .project-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-primary);
+      background-color: var(--card-hover-bg);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .badge-leader {
+      background-color: rgba(255, 183, 3, 0.15);
+      color: var(--accent-secondary);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--accent-secondary);
+      font-weight: 600;
+    }
+
+    .project-date {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .meta-tag {
+      background: #2a2a2a;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      color: var(--accent-primary);
+    }
+
+    .project-body h4 {
+      font-size: 0.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-body ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .project-body li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .project-body li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+      font-weight: bold;
+    }
+
+    /* Highlight class for key achievements */
+    .highlight {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header / Profile Section -->
+    <header>
+      <div class="profile-title">
+        <h1>최찬우</h1>
+      </div>
+      <p class="tagline">"독특하고 흥미로운 발상을 하는 게임 기획자"</p>
+      <div class="contact-info">
+        <span>📧 <a href="mailto:cksdn0219@naver.com">cksdn0219@naver.com</a></span>
+      </div>
+    </header>
+
+    <!-- Education Section -->
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div>
+            <div class="edu-school">유한대학교</div>
+            <div class="edu-dept">게임콘텐츠학과</div>
+          </div>
+          <div class="edu-date">2021.03 ~ 재학 중</div>
+        </div>
+        <div class="edu-item">
+          <div>
+            <div class="edu-school">신천고등학교</div>
+            <div class="edu-dept">졸업</div>
+          </div>
+          <div class="edu-date">2018.03 ~ 2021.02</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-title-group">
+              <h3 class="project-title">Blind Echo</h3>
+              <span class="badge-leader">팀장</span>
+            </div>
+            <span class="project-date">2026.09 ~ 현재</span>
+          </div>
+          <div class="project-meta">
+            <span class="meta-tag">구분: 기획 / 문서</span>
+            <span class="meta-tag">엔진: Unity</span>
+          </div>
+          <div class="project-body">
+            <ul>
+              <li><span class="highlight">게임 규칙 및 인터랙션 로직 설계</span>를 주도적으로 진행 중.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-title-group">
+              <h3 class="project-title">Project Pharmacy</h3>
+            </div>
+            <span class="project-date">2026.03 ~ 2026.07</span>
+          </div>
+          <div class="project-meta">
+            <span class="meta-tag">구분: 기획 / 문서 / 프로그래밍</span>
+            <span class="meta-tag">엔진: Unity</span>
+          </div>
+          <div class="project-body">
+            <ul>
+              <li>게임 컨셉 및 핵심 플레이 방식 기획.</li>
+              <li>커뮤니티 <span class="highlight">개발일지 작성을 통한 피드백 수렴</span> 및 플레이어 소통 담당.</li>
+              <li>NPC 로직, 인벤토리 시스템, 교통수단 생성 등 <span class="highlight">핵심 프로그래밍 직접 구현</span>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-title-group">
+              <h3 class="project-title">Last Warrior Standing</h3>
+            </div>
+            <span class="project-date">2025.08 ~ 2025.12</span>
+          </div>
+          <div class="project-meta">
+            <span class="meta-tag">구분: 기획 / 문서</span>
+            <span class="meta-tag">분류: 실사 보드게임</span>
+          </div>
+          <div class="project-body">
+            <ul>
+              <li>핵심 시스템인 <span class="highlight">'계단식 구조' 설계</span> 및 보드판 입체감을 위한 <span class="highlight">3D 레이아웃 솔루션 제시</span>.</li>
+              <li>다양한 캐릭터들의 전투 밸런스 및 스킬 기획.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-title-group">
+              <h3 class="project-title">Bandit Duel</h3>
+              <span class="badge-leader">팀장</span>
+            </div>
+            <span class="project-date">2025.08 ~ 2025.12</span>
+          </div>
+          <div class="project-meta">
+            <span class="meta-tag">구분: 기획 / 문서</span>
+            <span class="meta-tag">엔진: Unity</span>
+          </div>
+          <div class="project-body">
+            <ul>
+              <li>1대1 로컬 2D 도트 격투 게임 기획 및 개발 전체 리드.</li>
+              <li>오픈소스를 적극 활용하여 <span class="highlight">개발 기간을 대폭 단축</span>.</li>
+              <li>팀내 의견 대립 상황에서 팀장으로서 리더십을 발휘해 <span class="highlight">이견을 조율하고 완성도 높은 빌드 완성</span>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-title-group">
+              <h3 class="project-title">Cow boy cat</h3>
+              <span class="badge-leader">팀장</span>
+            </div>
+            <span class="project-date">2025.03 ~ 2025.06</span>
+          </div>
+          <div class="project-meta">
+            <span class="meta-tag">구분: 기획 / 프로그래밍</span>
+            <span class="meta-tag">엔진: Unity</span>
+          </div>
+          <div class="project-body">
+            <ul>
+              <li>뱀파이어 서바이벌 장르의 2D 탑다운 뷰 게임 기획 및 프로그래밍.</li>
+              <li>오픈소스 활용을 통한 빠른 원형 제작 및 개발 효율화.</li>
+              <li>팀원들과의 <span class="highlight">1:1 소통 기반의 업무 분배 및 마일스톤 관리</span>.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 최찬우. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
