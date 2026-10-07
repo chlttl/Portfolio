@@ -91,7 +91,7 @@
       z-index: 100;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      background: rgba(9, 12, 21, 0.82);
+      background: rgba(9, 12, 21, 0.85);
       border-bottom: 1px solid var(--border-color);
       padding: 1rem 0;
       transition: var(--transition-fast);
@@ -126,7 +126,7 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
       align-items: center;
       list-style: none;
     }
@@ -166,7 +166,7 @@
     }
 
     /* ==========================================================================
-       3. HERO SECTION
+       3. HERO SECTION (01. 소개)
        ========================================================================== */
     .hero {
       padding: 5rem 0 3.5rem 0;
@@ -302,23 +302,24 @@
     }
 
     /* ==========================================================================
-       4. SECTION STYLES & FILTER TABS
+       4. SECTION COMMON STYLES
        ========================================================================== */
     section {
-      padding: 4rem 0;
+      padding: 4.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .section-header {
       margin-bottom: 2.5rem;
     }
 
-    .section-tag {
+    .section-num {
       font-family: var(--font-code);
-      font-size: 0.82rem;
+      font-size: 0.88rem;
+      font-weight: 700;
       color: var(--cyan);
       letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       display: block;
     }
 
@@ -329,7 +330,66 @@
       letter-spacing: -0.02em;
     }
 
-    /* Filter Buttons */
+    /* ==========================================================================
+       5. EDUCATION SECTION (02. 학력)
+       ========================================================================== */
+    .edu-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      transition: var(--transition-fast);
+    }
+
+    .edu-card:hover {
+      border-color: var(--cyan);
+    }
+
+    .edu-school {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .edu-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .edu-period {
+      font-family: var(--font-code);
+      font-size: 0.88rem;
+      color: var(--gold);
+      background: rgba(245, 158, 11, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .edu-activity {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px dashed var(--border-color);
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       6. PROJECTS SECTION (03. 프로젝트)
+       ========================================================================== */
     .filter-bar {
       display: flex;
       gap: 0.6rem;
@@ -362,336 +422,6 @@
       box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
     }
 
-    /* ==========================================================================
-       5. FEATURED PROJECT HIGHLIGHT: GAME EVENT DESIGN (LIVE OPS)
-       ========================================================================== */
-    .featured-event-banner {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(139, 92, 246, 0.15) 50%, rgba(0, 242, 254, 0.1) 100%);
-      border: 2px solid rgba(245, 158, 11, 0.4);
-      border-radius: var(--radius-lg);
-      padding: 2.2rem;
-      margin-bottom: 3rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .featured-event-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(245, 158, 11, 0.2);
-      border: 1px solid var(--gold);
-      color: #fde047;
-      padding: 0.25rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .featured-title {
-      font-size: 1.65rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 0.8rem;
-    }
-
-    .featured-desc {
-      color: #cbd5e1;
-      font-size: 0.98rem;
-      max-width: 800px;
-      margin-bottom: 1.5rem;
-    }
-
-    .trend-tags-row {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.8rem;
-    }
-
-    .trend-tag {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      padding: 0.35rem 0.85rem;
-      border-radius: 6px;
-      font-size: 0.82rem;
-      color: #fef08a;
-    }
-
-    .trend-tag strong {
-      color: var(--cyan);
-    }
-
-    /* Simulator Interactive Box */
-    .simulator-container {
-      background: rgba(15, 18, 28, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .simulator-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.8rem;
-      margin-bottom: 1.2rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .simulator-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .sim-tabs {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .sim-tab-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 0.35rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-
-    .sim-tab-btn.active {
-      background: var(--purple);
-      border-color: var(--purple);
-      color: #ffffff;
-      font-weight: 700;
-    }
-
-    .sim-tab-content {
-      display: none;
-    }
-
-    .sim-tab-content.active {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Attendance Rewards Sim */
-    .reward-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .reward-card {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 1rem;
-      text-align: center;
-      transition: var(--transition-fast);
-      position: relative;
-    }
-
-    .reward-card.claimed {
-      border-color: var(--green);
-      background: rgba(16, 185, 129, 0.1);
-    }
-
-    .reward-day {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-
-    .reward-icon {
-      font-size: 2.2rem;
-      margin: 0.5rem 0;
-    }
-
-    .reward-name {
-      font-weight: 700;
-      color: #ffffff;
-      font-size: 0.95rem;
-    }
-
-    .reward-amount {
-      color: var(--cyan);
-      font-family: var(--font-code);
-      font-size: 0.88rem;
-    }
-
-    .claim-btn {
-      margin-top: 0.75rem;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      padding: 0.4rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-
-    .claim-btn:hover {
-      background: var(--cyan);
-      color: #000;
-      border-color: var(--cyan);
-    }
-
-    .claim-btn.disabled {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-dim);
-      border-color: transparent;
-      cursor: not-allowed;
-    }
-
-    /* Speed simulator */
-    .speed-sim-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(30, 41, 59, 0.6);
-      padding: 1.25rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-color);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .speed-info h4 {
-      color: #ffffff;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .speed-info p {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
-    .toggle-switch {
-      position: relative;
-      width: 60px;
-      height: 32px;
-      background: #334155;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: var(--transition-normal);
-    }
-
-    .toggle-switch.on {
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
-    }
-
-    .toggle-knob {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 26px;
-      height: 26px;
-      background: #ffffff;
-      border-radius: 50%;
-      transition: var(--transition-normal);
-    }
-
-    .toggle-switch.on .toggle-knob {
-      left: 31px;
-    }
-
-    /* Step up sim */
-    .stepup-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-    }
-
-    .stepup-card {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem;
-      position: relative;
-    }
-
-    .stepup-card.locked {
-      opacity: 0.5;
-      filter: grayscale(0.6);
-    }
-
-    .stepup-badge {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-weight: 700;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    .stepup-badge.step1 { background: rgba(0, 242, 254, 0.15); color: var(--cyan); border: 1px solid var(--cyan); }
-    .stepup-badge.step2 { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid var(--gold); }
-
-    .stepup-price {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-
-    .stepup-items {
-      list-style: none;
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      margin-bottom: 1rem;
-    }
-
-    .stepup-items li {
-      margin-bottom: 0.25rem;
-    }
-
-    .stepup-buy-btn {
-      width: 100%;
-      background: linear-gradient(135deg, var(--gold) 0%, #d97706 100%);
-      color: #000;
-      border: none;
-      padding: 0.5rem;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-
-    .stepup-buy-btn:hover {
-      box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
-    }
-
-    .stepup-buy-btn:disabled {
-      background: #334155;
-      color: #94a3b8;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-
-    /* ==========================================================================
-       6. PROJECTS GRID & CARDS
-       ========================================================================== */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -796,7 +526,7 @@
     }
 
     /* ==========================================================================
-       7. CORE SKILLS MATRIX
+       7. SKILLS SECTION (04. 역량)
        ========================================================================== */
     .skills-grid {
       display: grid;
@@ -849,55 +579,348 @@
     }
 
     /* ==========================================================================
-       8. EDUCATION & ACTIVITIES
+       8. ASSIGNMENTS SECTION (05. 과제)
        ========================================================================== */
-    .edu-timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+    .assignment-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(139, 92, 246, 0.12) 50%, rgba(0, 242, 254, 0.08) 100%);
+      border: 2px solid rgba(245, 158, 11, 0.4);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: var(--transition-normal);
     }
 
-    .edu-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
+    .assignment-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.25);
+    }
+
+    .assignment-badge-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .assignment-badge {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid var(--gold);
+      color: #fde047;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .assignment-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .assignment-desc {
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .trend-tags-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+
+    .trend-tag {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: #fef08a;
+    }
+
+    .trend-tag strong {
+      color: var(--cyan);
+    }
+
+    .assignment-actions-bar {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    }
+
+    /* Embedded Simulator */
+    .simulator-container {
+      background: rgba(15, 18, 28, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-md);
-      padding: 1.5rem 1.8rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .simulator-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .simulator-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sim-tabs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .sim-tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .sim-tab-btn.active {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .sim-tab-content {
+      display: none;
+    }
+
+    .sim-tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reward-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .reward-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      text-align: center;
+      transition: var(--transition-fast);
+    }
+
+    .reward-card.claimed {
+      border-color: var(--green);
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .reward-day {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .reward-icon {
+      font-size: 2.2rem;
+      margin: 0.5rem 0;
+    }
+
+    .reward-name {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .reward-amount {
+      color: var(--cyan);
+      font-family: var(--font-code);
+      font-size: 0.88rem;
+    }
+
+    .claim-btn {
+      margin-top: 0.75rem;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.4rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .claim-btn:hover {
+      background: var(--cyan);
+      color: #000;
+      border-color: var(--cyan);
+    }
+
+    .claim-btn.disabled {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-dim);
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+
+    .speed-sim-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(30, 41, 59, 0.6);
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
       flex-wrap: wrap;
       gap: 1rem;
     }
 
-    .edu-school {
-      font-size: 1.2rem;
+    .speed-info h4 {
+      color: #ffffff;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .speed-info p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 60px;
+      height: 32px;
+      background: #334155;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: var(--transition-normal);
+    }
+
+    .toggle-switch.on {
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+    }
+
+    .toggle-knob {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 26px;
+      height: 26px;
+      background: #ffffff;
+      border-radius: 50%;
+      transition: var(--transition-normal);
+    }
+
+    .toggle-switch.on .toggle-knob {
+      left: 31px;
+    }
+
+    .stepup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .stepup-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .stepup-card.locked {
+      opacity: 0.5;
+      filter: grayscale(0.6);
+    }
+
+    .stepup-badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stepup-badge.step1 { background: rgba(0, 242, 254, 0.15); color: var(--cyan); border: 1px solid var(--cyan); }
+    .stepup-badge.step2 { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid var(--gold); }
+
+    .stepup-price {
+      font-size: 1.3rem;
       font-weight: 800;
       color: #ffffff;
+      margin-bottom: 0.5rem;
     }
 
-    .edu-sub {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-top: 0.2rem;
-    }
-
-    .edu-period {
-      font-family: var(--font-code);
-      font-size: 0.88rem;
-      color: var(--gold);
-      background: rgba(245, 158, 11, 0.1);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      border: 1px solid rgba(245, 158, 11, 0.3);
-    }
-
-    .edu-activity {
-      margin-top: 0.8rem;
-      padding-top: 0.8rem;
-      border-top: 1px dashed var(--border-color);
-      font-size: 0.9rem;
+    .stepup-items {
+      list-style: none;
+      font-size: 0.85rem;
       color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    .stepup-items li {
+      margin-bottom: 0.25rem;
+    }
+
+    .stepup-buy-btn {
       width: 100%;
+      background: linear-gradient(135deg, var(--gold) 0%, #d97706 100%);
+      color: #000;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .stepup-buy-btn:hover {
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+    }
+
+    .stepup-buy-btn:disabled {
+      background: #334155;
+      color: #94a3b8;
+      cursor: not-allowed;
+      box-shadow: none;
     }
 
     /* ==========================================================================
@@ -1100,17 +1123,14 @@
       background: rgba(0, 242, 254, 0.08);
     }
 
-    /* ==========================================================================
-       12. RESPONSIVE MEDIA QUERIES
-       ========================================================================== */
     @media (max-width: 768px) {
       .hero {
         padding: 3rem 0 2rem 0;
       }
       .nav-links {
-        display: none; /* simple mobile fallback */
+        display: none;
       }
-      .featured-event-banner {
+      .assignment-card {
         padding: 1.5rem;
       }
       .modal-box {
@@ -1133,10 +1153,10 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">소개</a></li>
-        <li><a href="#featured-event">라이브 이벤트 기획</a></li>
+        <li><a href="#education">학력</a></li>
         <li><a href="#projects">프로젝트</a></li>
         <li><a href="#skills">역량</a></li>
-        <li><a href="#education">학력</a></li>
+        <li><a href="#assignments">과제</a></li>
       </ul>
       <button class="audio-toggle-btn" id="audioToggle" onclick="toggleAudioSFX()">
         <i class="fa-solid fa-volume-xmark" id="audioIcon"></i>
@@ -1148,7 +1168,7 @@
   <!-- Main Content Container -->
   <main class="container">
 
-    <!-- HERO SECTION -->
+    <!-- 01. 소개 SECTION -->
     <section class="hero" id="about">
       <div class="hero-status">
         <span class="pulse-dot"></span>
@@ -1168,8 +1188,8 @@
         <a href="#projects" class="btn btn-primary">
           <i class="fa-solid fa-gamepad"></i> 프로젝트 보기
         </a>
-        <a href="#featured-event" class="btn btn-secondary">
-          <i class="fa-solid fa-scroll"></i> 한가위 이벤트 기획서 (시뮬레이터)
+        <a href="#assignments" class="btn btn-secondary">
+          <i class="fa-solid fa-file-contract"></i> 과제 &amp; 기획 문서 보기
         </a>
         <button class="btn btn-secondary" onclick="copyContactEmail('cksdn0219@naver.com')">
           <i class="fa-solid fa-envelope"></i> cksdn0219@naver.com 복사
@@ -1179,144 +1199,61 @@
       <!-- Quick Stats -->
       <div class="hero-stats">
         <div class="stat-card">
-          <div class="stat-num" data-target="6">6</div>
-          <div class="stat-label">완성 프로젝트 / 기획서</div>
+          <div class="stat-num">5</div>
+          <div class="stat-label">완성 게임 프로젝트</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num" data-target="4">4</div>
-          <div class="stat-label">팀 리더 / 기획 리더 경험</div>
+          <div class="stat-num">1</div>
+          <div class="stat-label">라이브 기획 과제</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4회</div>
+          <div class="stat-label">팀 리더 / 기획 리더</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">Unity / C#</div>
-          <div class="stat-label">핵심 엔진 &amp; 구현 언어</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">LiveOps</div>
-          <div class="stat-label">트렌드 코리아 2026 연계 BM</div>
+          <div class="stat-label">핵심 엔진 &amp; 프로그래밍</div>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED LIVE EVENT DESIGN SHOWCASE -->
-    <section id="featured-event">
+    <!-- 02. 학력 SECTION -->
+    <section id="education">
       <div class="section-header">
-        <span class="section-tag">// FEATURED LIVE SERVICE EVENT DESIGN</span>
-        <h2 class="section-title">라이브 게임 이벤트 기획 &amp; 시뮬레이터</h2>
+        <span class="section-num">02. EDUCATION</span>
+        <h2 class="section-title">학력 및 주요 활동</h2>
       </div>
 
-      <div class="featured-event-banner">
-        <div class="featured-event-badge">
-          <i class="fa-solid fa-fire"></i> 트렌드 코리아 2026 기획서
-        </div>
-        <h3 class="featured-title">운빨존많겜 2026 한가위 대박 버닝 &amp; 유료 스텝업 프로모션</h3>
-        <p class="featured-desc">
-          시간 효율성(Ready Core), 확실한 성감(Feelconomy), 프리미엄 가성비 계산(Price Decoding)을 결합하여 명절 연휴 기간 DAU 40% 증가 및 스텝업 IAP 연계 결제 유도를 목표로 설계된 라이브 게임 이벤트 기획서입니다.
-        </p>
-
-        <div class="trend-tags-row">
-          <span class="trend-tag"><strong>레디코어 (Ready Core)</strong>: 2배속 전투 전원 무료 + VIP 3일 자동 연장</span>
-          <span class="trend-tag"><strong>필코노미 (Feelconomy)</strong>: 다이아 3k + 신화석 100 + 불멸석 50 확정 지급</span>
-          <span class="trend-tag"><strong>프라이스 디코딩 (Price Decoding)</strong>: ₩5,500 ➔ ₩33,000 스텝업 IAP</span>
+      <div class="edu-timeline">
+        <div class="edu-card">
+          <div>
+            <div class="edu-school">유한대학교</div>
+            <div class="edu-sub">게임콘텐츠학과 (재학 중)</div>
+            <div class="edu-activity">
+              <i class="fa-solid fa-users"></i> <strong>주요 활동:</strong> 2학년 1학기 ~ 3학년 2학기 학과 집행부 활동 (학과 이벤트 및 행사진행 소통 리더)
+            </div>
+          </div>
+          <span class="edu-period">2021.03 ~ 현재</span>
         </div>
 
-        <a href="./Game Event Design/index.html" target="_blank" class="btn btn-primary" style="margin-bottom: 1rem;">
-          <i class="fa-solid fa-file-pdf"></i> 기획서 웹 문서 풀버전 보기
-        </a>
-
-        <!-- Interactive Event Simulator Widget -->
-        <div class="simulator-container">
-          <div class="simulator-header">
-            <div class="simulator-title">
-              <i class="fa-solid fa-laptop-code"></i> 이벤트 인터랙티브 시뮬레이터 (직접 클릭해보세요)
-            </div>
-            <div class="sim-tabs">
-              <button class="sim-tab-btn active" onclick="switchSimTab(this, 'sim-attendance')">3일 출석 보상</button>
-              <button class="sim-tab-btn" onclick="switchSimTab(this, 'sim-speed')">2배속 버닝 체감</button>
-              <button class="sim-tab-btn" onclick="switchSimTab(this, 'sim-stepup')">스텝업 IAP 해금</button>
+        <div class="edu-card">
+          <div>
+            <div class="edu-school">신천고등학교</div>
+            <div class="edu-sub">졸업</div>
+            <div class="edu-activity">
+              <i class="fa-solid fa-graduation-cap"></i> <strong>특이사항:</strong> 3학년 고교 위탁교육 (게임개발 교육과정 이수 및 실습)
             </div>
           </div>
-
-          <!-- Tab 1: Attendance Sim -->
-          <div class="sim-tab-content active" id="sim-attendance">
-            <div class="reward-grid">
-              <div class="reward-card" id="reward-day1">
-                <div class="reward-day">1일차 (명절 첫날)</div>
-                <div class="reward-icon">💎</div>
-                <div class="reward-name">다이아</div>
-                <div class="reward-amount">3,000개</div>
-                <button class="claim-btn" onclick="claimReward('reward-day1', '다이아 3,000개')">보상 수령</button>
-              </div>
-              <div class="reward-card" id="reward-day2">
-                <div class="reward-day">2일차 (추석 당일)</div>
-                <div class="reward-icon">🔮</div>
-                <div class="reward-name">신화석 (핵심 육성)</div>
-                <div class="reward-amount">100개</div>
-                <button class="claim-btn" onclick="claimReward('reward-day2', '신화석 100개')">보상 수령</button>
-              </div>
-              <div class="reward-card" id="reward-day3">
-                <div class="reward-day">3일차 (연휴 마지막)</div>
-                <div class="reward-icon">⚡</div>
-                <div class="reward-name">불멸석 (엔드 재화)</div>
-                <div class="reward-amount">50개</div>
-                <button class="claim-btn" onclick="claimReward('reward-day3', '불멸석 50개')">보상 수령</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 2: Speed Sim -->
-          <div class="sim-tab-content" id="sim-speed">
-            <div class="speed-sim-box">
-              <div class="speed-info">
-                <h4 id="speedTitle">전투 속도: 1배속 (평시 모드)</h4>
-                <p id="speedDesc">한 판 소요 시간: <strong>22분</strong> | 이동 중 플레이 피로도: 높음</p>
-              </div>
-              <div style="display: flex; align-items: center; gap: 0.8rem;">
-                <span style="font-size: 0.85rem; color: var(--text-muted);">2배속 버닝 온</span>
-                <div class="toggle-switch" id="speedToggle" onclick="toggleSpeedSim()">
-                  <div class="toggle-knob"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab 3: Step-up Sim -->
-          <div class="sim-tab-content" id="sim-stepup">
-            <div class="stepup-grid">
-              <div class="stepup-card" id="stepup1Card">
-                <span class="stepup-badge step1">1단계: 한가위 복주머니</span>
-                <div class="stepup-price">₩5,500</div>
-                <ul class="stepup-items">
-                  <li>• 다이아 5,000개</li>
-                  <li>• 신화석 150개</li>
-                  <li>• 버닝 에너지 200개</li>
-                  <li style="color: var(--cyan); margin-top: 0.4rem;"><strong>* 상점 대비 400% 초고효율</strong></li>
-                </ul>
-                <button class="stepup-buy-btn" id="stepup1Btn" onclick="buyStepUp1()">1단계 구매 체험</button>
-              </div>
-
-              <div class="stepup-card locked" id="stepup2Card">
-                <span class="stepup-badge step2">2단계: 보름달 대박 상자</span>
-                <div class="stepup-price">₩33,000</div>
-                <ul class="stepup-items">
-                  <li>• 다이아 20,000개</li>
-                  <li>• 불멸석 100개 (엔드 재화)</li>
-                  <li>• [한정] 달토끼 테두리 &amp; 프로필</li>
-                  <li style="color: var(--gold); margin-top: 0.4rem;"><strong>* 1단계 구매 시 해금!</strong></li>
-                </ul>
-                <button class="stepup-buy-btn" id="stepup2Btn" disabled onclick="buyStepUp2()">잠김 (1단계 필요)</button>
-              </div>
-            </div>
-          </div>
-
+          <span class="edu-period">2018.03 ~ 2021.02</span>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- 03. 프로젝트 SECTION -->
     <section id="projects">
       <div class="section-header">
-        <span class="section-tag">// PORTFOLIO PROJECTS</span>
-        <h2 class="section-title">기획 &amp; 개발 프로젝트 목록</h2>
+        <span class="section-num">03. PROJECTS</span>
+        <h2 class="section-title">게임 프로젝트 목록</h2>
       </div>
 
       <!-- Category Filter Bar -->
@@ -1325,10 +1262,9 @@
         <button class="filter-btn" onclick="filterProjects('unity', this)">Unity / 프로그래밍</button>
         <button class="filter-btn" onclick="filterProjects('system', this)">시스템 &amp; 규칙 기획</button>
         <button class="filter-btn" onclick="filterProjects('boardgame', this)">보드게임</button>
-        <button class="filter-btn" onclick="filterProjects('liveops', this)">라이브 기획</button>
       </div>
 
-      <!-- Project Cards Grid -->
+      <!-- Project Cards Grid (5 Projects) -->
       <div class="projects-grid">
 
         <!-- Project 1: Blind Echo -->
@@ -1377,30 +1313,7 @@
           </div>
         </article>
 
-        <!-- Project 3: 운빨존많겜 이벤트 기획 -->
-        <article class="project-card" data-category="liveops system" onclick="openProjectModal('event-design')">
-          <div class="project-top">
-            <div class="project-header-row">
-              <h3 class="project-title">운빨존많겜 한가위 대축제</h3>
-              <span class="role-tag" style="border-color: var(--gold); color: var(--gold);">라이브 기획</span>
-            </div>
-            <span class="project-period">2026.09 | 라이브 서비스 기획</span>
-            <p class="project-summary">
-              《트렌드 코리아 2026》 3가지 키워드 연계: Ready Core(2배속 버닝), Feelconomy(엔드 재화 확정 지급), Price Decoding(스텝업 IAP).
-            </p>
-          </div>
-          <div class="project-tags">
-            <span class="mini-tag">BM 기획</span>
-            <span class="mini-tag">유저 리텐션</span>
-            <span class="mini-tag">스텝업 IAP</span>
-          </div>
-          <div class="card-footer-action">
-            <span>상세 기획 내용 보기</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </article>
-
-        <!-- Project 4: Last Warrior Standing -->
+        <!-- Project 3: Last Warrior Standing -->
         <article class="project-card" data-category="boardgame system" onclick="openProjectModal('last-warrior')">
           <div class="project-top">
             <div class="project-header-row">
@@ -1423,7 +1336,7 @@
           </div>
         </article>
 
-        <!-- Project 5: Bandit Duel -->
+        <!-- Project 4: Bandit Duel -->
         <article class="project-card" data-category="unity system" onclick="openProjectModal('bandit-duel')">
           <div class="project-top">
             <div class="project-header-row">
@@ -1446,7 +1359,7 @@
           </div>
         </article>
 
-        <!-- Project 6: Cow boy cat -->
+        <!-- Project 5: Cow boy cat -->
         <article class="project-card" data-category="unity" onclick="openProjectModal('cowboy-cat')">
           <div class="project-top">
             <div class="project-header-row">
@@ -1472,10 +1385,10 @@
       </div>
     </section>
 
-    <!-- SKILLS & SPECIALTIES -->
+    <!-- 04. 역량 SECTION -->
     <section id="skills">
       <div class="section-header">
-        <span class="section-tag">// CORE COMPETENCIES</span>
+        <span class="section-num">04. SKILLS &amp; COMPETENCIES</span>
         <h2 class="section-title">기획 &amp; 개발 핵심 역량</h2>
       </div>
 
@@ -1522,35 +1435,136 @@
       </div>
     </section>
 
-    <!-- EDUCATION & ACTIVITIES -->
-    <section id="education">
+    <!-- 05. 과제 SECTION (NEW ASSIGNMENT CARDS SECTION) -->
+    <section id="assignments">
       <div class="section-header">
-        <span class="section-tag">// BACKGROUND &amp; EDUCATION</span>
-        <h2 class="section-title">학력 및 주요 활동</h2>
+        <span class="section-num">05. ASSIGNMENTS &amp; PROPOSALS</span>
+        <h2 class="section-title">기획 과제 &amp; 라이브 서비스 문서</h2>
       </div>
 
-      <div class="edu-timeline">
-        <div class="edu-card">
-          <div>
-            <div class="edu-school">유한대학교</div>
-            <div class="edu-sub">게임콘텐츠학과 (재학 중)</div>
-            <div class="edu-activity">
-              <i class="fa-solid fa-users"></i> <strong>주요 활동:</strong> 2학년 1학기 ~ 3학년 2학기 학과 집행부 활동 (행사 기획 및 팀 소통 주도)
-            </div>
-          </div>
-          <span class="edu-period">2021.03 ~ 현재</span>
-        </div>
+      <!-- Assignment Cards Container -->
+      <div class="assignments-grid">
 
-        <div class="edu-card">
-          <div>
-            <div class="edu-school">신천고등학교</div>
-            <div class="edu-sub">졸업</div>
-            <div class="edu-activity">
-              <i class="fa-solid fa-graduation-cap"></i> <strong>특이사항:</strong> 3학년 고교 위탁교육 (게임개발 과정 수강)
-            </div>
+        <!-- Assignment Card 1: 운빨존많겜 2026 한가위 대축제 -->
+        <article class="assignment-card">
+          <div class="assignment-badge-bar">
+            <span class="assignment-badge">
+              <i class="fa-solid fa-file-circle-check"></i> 라이브 서비스 기획 과제
+            </span>
+            <span style="font-size: 0.8rem; color: var(--gold); font-weight: 700;">
+              《트렌드 코리아 2026》 연계
+            </span>
           </div>
-          <span class="edu-period">2018.03 ~ 2021.02</span>
-        </div>
+
+          <h3 class="assignment-title">운빨존많겜 2026 한가위 풍년 대축제 기획서</h3>
+          <p class="assignment-desc">
+            모바일 유저의 시간 효율성 니즈(Ready Core), 확실한 도파민 성감(Feelconomy), 프리미엄 가성비 계산(Price Decoding)을 결합하여 연휴 DAU 40% 증가 및 스텝업 IAP 결제 유도를 목표로 작성한 기획 과제입니다.
+          </p>
+
+          <div class="trend-tags-row">
+            <span class="trend-tag"><strong>레디코어 (Ready Core)</strong>: 2배속 전투 무료 + VIP 3일 자동 연장</span>
+            <span class="trend-tag"><strong>필코노미 (Feelconomy)</strong>: 다이아 3k / 신화석 100 / 불멸석 50 확정</span>
+            <span class="trend-tag"><strong>프라이스 디코딩 (Price Decoding)</strong>: ₩5,500 ➔ ₩33,000 스텝업 IAP</span>
+          </div>
+
+          <!-- Interactive Simulator Box -->
+          <div class="simulator-container">
+            <div class="simulator-header">
+              <div class="simulator-title">
+                <i class="fa-solid fa-laptop-code"></i> 기획 과제 인터랙티브 시뮬레이터 (미리보기)
+              </div>
+              <div class="sim-tabs">
+                <button class="sim-tab-btn active" onclick="switchSimTab(this, 'sim-attendance')">3일 출석 보상</button>
+                <button class="sim-tab-btn" onclick="switchSimTab(this, 'sim-speed')">2배속 버닝 체감</button>
+                <button class="sim-tab-btn" onclick="switchSimTab(this, 'sim-stepup')">스텝업 IAP 해금</button>
+              </div>
+            </div>
+
+            <!-- Tab 1: Attendance Sim -->
+            <div class="sim-tab-content active" id="sim-attendance">
+              <div class="reward-grid">
+                <div class="reward-card" id="reward-day1">
+                  <div class="reward-day">1일차 (명절 첫날)</div>
+                  <div class="reward-icon">💎</div>
+                  <div class="reward-name">다이아</div>
+                  <div class="reward-amount">3,000개</div>
+                  <button class="claim-btn" onclick="claimReward('reward-day1', '다이아 3,000개')">보상 수령</button>
+                </div>
+                <div class="reward-card" id="reward-day2">
+                  <div class="reward-day">2일차 (추석 당일)</div>
+                  <div class="reward-icon">🔮</div>
+                  <div class="reward-name">신화석 (핵심 육성)</div>
+                  <div class="reward-amount">100개</div>
+                  <button class="claim-btn" onclick="claimReward('reward-day2', '신화석 100개')">보상 수령</button>
+                </div>
+                <div class="reward-card" id="reward-day3">
+                  <div class="reward-day">3일차 (연휴 마지막)</div>
+                  <div class="reward-icon">⚡</div>
+                  <div class="reward-name">불멸석 (엔드 재화)</div>
+                  <div class="reward-amount">50개</div>
+                  <button class="claim-btn" onclick="claimReward('reward-day3', '불멸석 50개')">보상 수령</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 2: Speed Sim -->
+            <div class="sim-tab-content" id="sim-speed">
+              <div class="speed-sim-box">
+                <div class="speed-info">
+                  <h4 id="speedTitle">전투 속도: 1배속 (평시 모드)</h4>
+                  <p id="speedDesc">한 판 소요 시간: <strong>22분</strong> | 이동 중 플레이 피로도: 높음</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                  <span style="font-size: 0.85rem; color: var(--text-muted);">2배속 버닝 온</span>
+                  <div class="toggle-switch" id="speedToggle" onclick="toggleSpeedSim()">
+                    <div class="toggle-knob"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 3: Step-up Sim -->
+            <div class="sim-tab-content" id="sim-stepup">
+              <div class="stepup-grid">
+                <div class="stepup-card" id="stepup1Card">
+                  <span class="stepup-badge step1">1단계: 한가위 복주머니</span>
+                  <div class="stepup-price">₩5,500</div>
+                  <ul class="stepup-items">
+                    <li>• 다이아 5,000개</li>
+                    <li>• 신화석 150개</li>
+                    <li>• 버닝 에너지 200개</li>
+                    <li style="color: var(--cyan); margin-top: 0.4rem;"><strong>* 상점 대비 400% 초고효율</strong></li>
+                  </ul>
+                  <button class="stepup-buy-btn" id="stepup1Btn" onclick="buyStepUp1()">1단계 구매 체험</button>
+                </div>
+
+                <div class="stepup-card locked" id="stepup2Card">
+                  <span class="stepup-badge step2">2단계: 보름달 대박 상자</span>
+                  <div class="stepup-price">₩33,000</div>
+                  <ul class="stepup-items">
+                    <li>• 다이아 20,000개</li>
+                    <li>• 불멸석 100개 (엔드 재화)</li>
+                    <li>• [한정] 달토끼 테두리 &amp; 프로필</li>
+                    <li style="color: var(--gold); margin-top: 0.4rem;"><strong>* 1단계 구매 시 해금!</strong></li>
+                  </ul>
+                  <button class="stepup-buy-btn" id="stepup2Btn" disabled onclick="buyStepUp2()">잠김 (1단계 필요)</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Assignment Action Buttons to Open New Web Page -->
+          <div class="assignment-actions-bar">
+            <a href="./Game Event Design/index.html" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-up-right-from-square"></i> 기획서 웹페이지 새 창으로 열기
+            </a>
+            <button class="btn btn-secondary" onclick="openProjectModal('event-design')">
+              <i class="fa-solid fa-magnifying-glass"></i> 기획 요약 모달 팝업
+            </button>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -1572,12 +1586,12 @@
       </div>
 
       <div class="modal-body-section">
-        <h4 class="modal-section-h4"><i class="fa-solid fa-circle-info"></i> 프로젝트 개요 및 기획 의도</h4>
+        <h4 class="modal-section-h4"><i class="fa-solid fa-circle-info"></i> 개요 및 기획 의도</h4>
         <p id="modalDesc" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7;"></p>
       </div>
 
       <div class="modal-body-section">
-        <h4 class="modal-section-h4"><i class="fa-solid fa-list-check"></i> 주요 수행 역할 및 시스템 상세</h4>
+        <h4 class="modal-section-h4"><i class="fa-solid fa-list-check"></i> 주요 수행 역할 및 상세 내역</h4>
         <ul class="modal-ul" id="modalList">
           <!-- JS populated -->
         </ul>
@@ -1638,11 +1652,11 @@
       },
       'event-design': {
         title: '운빨존많겜 2026 한가위 풍년 대축제',
-        category: '라이브 서비스 기획 & BM 프로모션',
+        category: '라이브 서비스 기획 과제 & BM 프로모션',
         role: '라이브 기획자',
         date: '2026.09',
         engine: 'Live Operations / Markdown Doc',
-        desc: '《트렌드 코리아 2026》 키워드(레디코어, 필코노미, 프라이스 디코딩)를 모바일 타워디펜스 게임에 결합한 대형 명절 프로모션 기획서입니다.',
+        desc: '《트렌드 코리아 2026》 키워드(레디코어, 필코노미, 프라이스 디코딩)를 모바일 타워디펜스 게임에 결합한 대형 명절 프로모션 기획 과제입니다.',
         details: [
           '<strong>Ready Core (레디코어):</strong> 2배속 전투 전원 무료 + 기존 VIP 보유 유저 3일 자동 연장으로 판당 소요시간을 20분 ➔ 10분대로 압축하여 명절 시성비 니즈 충족.',
           '<strong>Feelconomy (필코노미):</strong> 잡다한 소모품 대신 다이아 3k, 신화석 100개, 불멸석 50개 3일 연속 출석 확정 보상으로 즉각적 도파민과 성장 체감 제공.',
@@ -1650,7 +1664,7 @@
           '<strong>예상 KPI:</strong> 연휴 DAU 40% 이상 증대, 사냥 패스 신규 유료 전환율 15% 이상 달성.'
         ],
         extraLink: {
-          text: '웹 문서 풀버전 열기',
+          text: '과제 웹페이지 풀버전 새 창으로 열기',
           url: './Game Event Design/index.html'
         }
       },
@@ -1775,7 +1789,6 @@
       playClickSFX(580, 0.05);
     }
 
-    // Attendance Claim Sim
     function claimReward(cardId, rewardName) {
       const card = document.getElementById(cardId);
       const btn = card.querySelector('.claim-btn');
@@ -1789,7 +1802,6 @@
       playClickSFX(880, 0.12);
     }
 
-    // Speed Sim Toggle
     let speedOn = false;
     function toggleSpeedSim() {
       speedOn = !speedOn;
@@ -1811,7 +1823,6 @@
       }
     }
 
-    // Step-up Sim
     function buyStepUp1() {
       const step1Btn = document.getElementById('stepup1Btn');
       step1Btn.innerText = '구매 완료 ✔';
@@ -1865,7 +1876,7 @@
     }
 
     /* --------------------------------------------------------------------------
-       6. SOUND EFFECTS VIA WEB AUDIO API (MUTED BY DEFAULT)
+       6. SOUND EFFECTS VIA WEB AUDIO API
        -------------------------------------------------------------------------- */
     let audioEnabled = false;
     let audioCtx = null;
@@ -1936,7 +1947,6 @@
     function animateCanvas() {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw particle connections
       for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
         p1.x += p1.vx;
