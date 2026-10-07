@@ -10,10 +10,10 @@
   <meta name="keywords" content="최찬우, 게임기획자, 포트폴리오, Game Planner, Unity, 게임개발, 라이브이벤트기획, 유한대학교">
   <meta name="author" content="최찬우 (Choi Chan-woo)">
 
-  <!-- OpenGraph Social Card Meta Tags (KakaoTalk, Discord, Facebook Preview) -->
+  <!-- OpenGraph Social Card Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="최찬우 | 게임 기획자 &amp; 프로그래머 포트폴리오">
-  <meta property="og:description" content="재미의 메커니즘을 정교한 시스템과 논리로 설계합니다. 게임 프로젝트 5종 &amp; 라이브 이벤트 기획 과제 수록.">
+  <meta property="og:description" content="재미의 메커니즘을 정교한 시스템과 논리로 설계합니다. 게임 프로젝트 5종 &amp; 기획 과제 수록.">
   <meta property="og:site_name" content="최찬우 게임 기획 포트폴리오">
   <meta property="og:locale" content="ko_KR">
 
@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="최찬우 | 게임 기획자 &amp; 프로그래머 포트폴리오">
   <meta name="twitter:description" content="재미의 메커니즘을 정교한 시스템과 논리로 설계합니다.">
 
-  <!-- Embedded Favicon (No external asset dependency) -->
+  <!-- Embedded Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
 
   <!-- Google Fonts & Icons -->
@@ -54,6 +54,7 @@
       --gold: #f59e0b;
       --gold-glow: rgba(245, 158, 11, 0.25);
       --green: #10b981;
+      --pink: #ec4899;
 
       --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       --font-display: 'Outfit', sans-serif;
@@ -599,8 +600,14 @@
     }
 
     /* ==========================================================================
-       8. ASSIGNMENTS SECTION (05. 과제)
+       8. ASSIGNMENTS SECTION (05. 과제 CARDS)
        ========================================================================== */
+    .assignments-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     .assignment-card {
       background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(139, 92, 246, 0.12) 50%, rgba(0, 242, 254, 0.08) 100%);
       border: 2px solid rgba(245, 158, 11, 0.4);
@@ -1201,7 +1208,7 @@
       </h1>
 
       <p class="hero-sub">
-        유한대학교 게임콘텐츠학과에서 보드게임 시스템부터 2D 서바이벌, 격투, NPC FSM 프로그래밍, 라이브 이벤트 BM 프로모션까지 독특한 플레이 메커니즘을 직접 설계하고 구현해 왔습니다.
+        유한대학교 게임콘텐츠학과에서 보드게임 시스템부터 2D 서바이벌, 격투, NPC FSM 프로그래밍, 라이브 이벤트 BM 프로모션 및 트릭컬 리바이브 재미요소 역기획 과제까지 독특한 플레이 메커니즘을 설계하고 구현해 왔습니다.
       </p>
 
       <div class="hero-actions">
@@ -1223,8 +1230,8 @@
           <div class="stat-label">완성 게임 프로젝트</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">1</div>
-          <div class="stat-label">라이브 기획 과제</div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">기획 분석 &amp; 이벤트 과제</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">4회</div>
@@ -1455,11 +1462,11 @@
       </div>
     </section>
 
-    <!-- 05. 과제 SECTION (DEPLOYMENT READY ASSIGNMENT CARDS) -->
+    <!-- 05. 과제 SECTION (2 ASSIGNMENT CARDS) -->
     <section id="assignments">
       <div class="section-header">
         <span class="section-num">05. ASSIGNMENTS &amp; PROPOSALS</span>
-        <h2 class="section-title">기획 과제 &amp; 라이브 서비스 문서</h2>
+        <h2 class="section-title">기획 과제 &amp; 분석 문서</h2>
       </div>
 
       <!-- Assignment Cards Container -->
@@ -1574,13 +1581,45 @@
 
           </div>
 
-          <!-- Assignment Action Buttons to Open New Web Page -->
+          <!-- Action Buttons -->
           <div class="assignment-actions-bar">
             <a href="./game-event-design/index.html" target="_blank" class="btn btn-primary">
               <i class="fa-solid fa-up-right-from-square"></i> 기획서 웹페이지 새 창으로 열기
             </a>
             <button class="btn btn-secondary" onclick="openProjectModal('event-design')">
               <i class="fa-solid fa-magnifying-glass"></i> 기획 요약 모달 팝업
+            </button>
+          </div>
+        </article>
+
+        <!-- Assignment Card 2: 트릭컬 리바이브 재미요소 분석서 -->
+        <article class="assignment-card" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(139, 92, 246, 0.12) 50%, rgba(0, 242, 254, 0.08) 100%); border-color: rgba(236, 72, 153, 0.4);">
+          <div class="assignment-badge-bar">
+            <span class="assignment-badge" style="background: rgba(236, 72, 153, 0.2); border-color: var(--pink); color: #fbcfe8;">
+              <i class="fa-solid fa-gamepad"></i> 시스템 역기획 과제
+            </span>
+            <span style="font-size: 0.8rem; color: var(--pink); font-weight: 700;">
+              플레이어 재미 메커니즘 분류
+            </span>
+          </div>
+
+          <h3 class="assignment-title">트릭컬 리바이브 재미요소 &amp; 시스템 분석서</h3>
+          <p class="assignment-desc">
+            "왜 재미있는가"를 기준으로 트릭컬 리바이브의 유쾌한 상호작용(볼따구), 성격 시너지 덱빌딩, 교단 본부 생산 랩, 테마극장 미니게임 등 18가지 핵심 재미 메커니즘을 세분화하여 분석한 과제 문서입니다.
+          </p>
+
+          <div class="trend-tags-row">
+            <span class="trend-tag" style="border-color: rgba(236, 72, 153, 0.3); color: #fbcfe8;"><strong>상호작용</strong>: 볼 당기기 / 쓰다듬기 / 사도 면접</span>
+            <span class="trend-tag" style="border-color: rgba(236, 72, 153, 0.3); color: #fbcfe8;"><strong>덱빌딩</strong>: 성격 시너지 &amp; 코인 이자 메커니즘</span>
+            <span class="trend-tag" style="border-color: rgba(236, 72, 153, 0.3); color: #fbcfe8;"><strong>순환 루프</strong>: 교단 본부 생산 랩 &amp; 테마극장</span>
+          </div>
+
+          <div class="assignment-actions-bar">
+            <a href="./trickcal-fun-elements/index.html" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);">
+              <i class="fa-solid fa-up-right-from-square"></i> 분석서 웹페이지 새 창으로 열기
+            </a>
+            <button class="btn btn-secondary" onclick="openProjectModal('trickcal-fun')">
+              <i class="fa-solid fa-magnifying-glass"></i> 분석 요약 모달 팝업
             </button>
           </div>
         </article>
@@ -1686,6 +1725,24 @@
         extraLink: {
           text: '과제 웹페이지 풀버전 새 창으로 열기',
           url: './game-event-design/index.html'
+        }
+      },
+      'trickcal-fun': {
+        title: '트릭컬 리바이브 재미요소 & 시스템 분석서',
+        category: '게임 시스템 분석 & 역기획 과제',
+        role: '시스템 분석자',
+        date: '2026.10',
+        engine: 'System Analysis / Case Study',
+        desc: '트릭컬 리바이브의 "볼따구 상호작용", "성격 시너지 덱빌딩", "교단 본부 성장 및 자원 순환" 등 플레이어가 재미를 체감하는 18가지 핵심 메커니즘을 분류하고 역기획한 과제 문서입니다.',
+        details: [
+          '<strong>성격 시너지 & 덱빌딩 구조 분석:</strong> 광기/순수/냉정/활발 등 성격 분류가 전투 시너지와 연계되는 플레이어 선택 유도 메커니즘 역기획.',
+          '<strong>상호작용 연출 체계화:</strong> 볼 당기기/쓰다듬기, 사도 면접 획득 연출 등 수집품이 아닌 캐릭터 교감 경험 설계 분석.',
+          '<strong>교단 본부 & 자원 순환 루프:</strong> 생산 랩, 성물, 가구 꾸미기를 통한 단기/장기 성장의 상호 순환 구조 분석.',
+          '<strong>18가지 추가 재미요소 도출:</strong> 테마극장 미니게임, 줘팸터 PvP, 학년 성장 변화 등 종합 분석표 도출.'
+        ],
+        extraLink: {
+          text: '분석서 웹페이지 새 창으로 열기',
+          url: './trickcal-fun-elements/index.html'
         }
       },
       'last-warrior': {

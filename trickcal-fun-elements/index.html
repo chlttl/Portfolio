@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트릭컬 리바이브 재미요소 분석서 | 최찬우 게임 기획 과제</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Pretendard:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 28, 45, 0.85);
+      --border-color: rgba(255, 255, 255, 0.12);
+      --cyan: #00f2fe;
+      --purple: #8b5cf6;
+      --gold: #f59e0b;
+      --pink: #ec4899;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Pretendard', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      word-break: keep-all;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(139, 92, 246, 0.15) 50%, rgba(0, 242, 254, 0.1) 100%);
+      border: 1px solid rgba(236, 72, 153, 0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    p.lead {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .meta-tag-bar {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: var(--pink);
+    }
+
+    .section-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin: 1.2rem 0 0.5rem 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--pink);
+      font-weight: bold;
+    }
+
+    .point-box {
+      background: rgba(236, 72, 153, 0.08);
+      border-left: 3px solid var(--pink);
+      padding: 0.8rem 1rem;
+      border-radius: 0 8px 8px 0;
+      margin: 0.6rem 0 1.2rem 0;
+      font-size: 0.9rem;
+      color: #fce7f3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(30, 41, 59, 0.8);
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="../index.html#assignments" class="back-link">
+        <i class="fa-solid fa-arrow-left"></i> 포트폴리오로 돌아가기
+      </a>
+      <h1>트릭컬 리바이브 재미요소 분석서</h1>
+      <p class="lead">
+        기존 플레이 분석에서 확인된 재미요소를 체계적으로 분류하고, 시스템 구조와 플레이어가 체감하는 유쾌한 경험을 메커니즘 관점에서 정리한 역기획 과제 문서입니다.
+      </p>
+      <div class="meta-tag-bar">
+        <span class="tag">작성자: 최찬우 (게임 기획자)</span>
+        <span class="tag">분류: 게임 시스템 분석 &amp; 재미요소 역기획</span>
+        <span class="tag">타겟 게임: 트릭컬 리바이브</span>
+      </div>
+    </header>
+
+    <!-- 0. 기존 분석 핵심 -->
+    <div class="section-box">
+      <h2><i class="fa-solid fa-star"></i> 0. 기존 분석에서 확인된 핵심 재미요소</h2>
+      
+      <h3>0-1. 유쾌한 상호작용과 연출</h3>
+      <ul>
+        <li>시작 컷씬 및 뽑기 연출에서 캐릭터 볼을 직접 당기는 조작을 넣어 유쾌함 극대화.</li>
+        <li>캐릭터의 다양한 표정과 즉각적 반응으로 교감하는 재미 전달.</li>
+      </ul>
+
+      <h3>0-2. 자동 전투 기반의 간편한 플레이</h3>
+      <ul>
+        <li>탱커 ➔ 지원 ➔ 원거리 배치 순서를 고려하며 직관적인 관람형 자동 전투 제공.</li>
+      </ul>
+
+      <h3>0-3. 전투 중 선택과 랜덤성</h3>
+      <ul>
+        <li>카드 선택 구매, 동종 캐릭터 학년 상승 시스템 및 확률 업그레이드 긴장감.</li>
+      </ul>
+
+      <h3>0-4. 덱빌딩과 상성 &amp; 경제 시스템</h3>
+      <ul>
+        <li>코인 이자 자원 관리 메커니즘과 캐릭터 상성 조합의 정밀한 전략성.</li>
+      </ul>
+    </div>
+
+    <!-- 1. 캐릭터 & 상호작용 -->
+    <div class="section-box">
+      <h2><i class="fa-solid fa-user-astronaut"></i> 1. 캐릭터 &amp; 관계성에서 발생하는 재미</h2>
+      
+      <h3>1-1. 캐릭터의 성격 분류 &amp; 시너지</h3>
+      <p style="color: #cbd5e1; font-size: 0.95rem;">광기, 순수, 냉정, 활발, 우울, 공명 등의 성격이 전투 시너지와 연결되어 덱 구성의 깊이를 형성.</p>
+      <div class="point-box">
+        <strong>재미 포인트:</strong> 캐릭터의 외형/설정이 게임 시스템과 직접 직결되어 깊이 있는 덱빌딩 유도.
+      </div>
+
+      <h3>1-2. 볼따구 상호작용 &amp; 사도 면접</h3>
+      <ul>
+        <li>볼 당기기·쓰다듬기 등의 물리적 상호작용으로 캐릭터를 단순 수집품이 아닌 장난치며 노는 존재로 체감.</li>
+        <li>캐릭터 획득 과정을 면접 형태의 개그 연출로 구성해 수집 자체를 보상 이벤트로 경험화.</li>
+      </ul>
+    </div>
+
+    <!-- 2. 교단 본부 & 수집 -->
+    <div class="section-box">
+      <h2><i class="fa-solid fa-house-chimney"></i> 2. 교단 본부 성장 &amp; 시스템 순환</h2>
+      <ul>
+        <li><strong>교단 본부 레벨업:</strong> 성물, 생산 랩, 연회장, 모험회 확장을 통한 종합적 성장 체감.</li>
+        <li><strong>생산 랩과 자원 순환:</strong> 전투 ➔ 재료 확보 ➔ 생산/제작 ➔ 성장으로 이어지는 지속적 게임 루프.</li>
+        <li><strong>가구 및 공간 꾸미기:</strong> 나만의 교단 공간을 꾸미고 관상하는 개인화 수집 재미.</li>
+      </ul>
+    </div>
+
+    <!-- 3. 핵심 재미요소 요약 표 -->
+    <div class="section-box">
+      <h2><i class="fa-solid fa-table"></i> 3. 핵심 재미요소 종합 분류표</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>분류</th>
+            <th>핵심 재미 메커니즘</th>
+            <th>플레이어 체감 경험</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>캐릭터 &amp; 성격</td>
+            <td>개성 강한 사도 &amp; 성격 시너지</td>
+            <td>캐릭터 애착 형성 및 덱 조합 재미</td>
+          </tr>
+          <tr>
+            <td>상호작용</td>
+            <td>볼 당기기 / 쓰다듬기</td>
+            <td>캐릭터와 직접 교감하고 놀 수 있음</td>
+          </tr>
+          <tr>
+            <td>전투 &amp; 경제</td>
+            <td>자동전투 + 카드선택 + 코인 이자</td>
+            <td>편하게 보면서도 자원 운용과 선택의 긴장감</td>
+          </tr>
+          <tr>
+            <td>성장 &amp; 루프</td>
+            <td>학년/스킬 해금 + 교단 생산 랩</td>
+            <td>단기/장기적인 명확한 성장 체감</td>
+          </tr>
+          <tr>
+            <td>스토리 &amp; 이벤트</td>
+            <td>코미디 스토리 + 테마극장 미니게임</td>
+            <td>반복 플레이 완화 및 신선한 환기 구간</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
