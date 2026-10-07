@@ -38,7 +38,7 @@
     :root {
       --bg-dark: #090c15;
       --bg-card: rgba(22, 28, 45, 0.75);
-      --bg-card-hover: rgba(30, 39, 63, 0.9);
+      --bg-card-hover: rgba(30, 39, 63, 0.92);
       --border-color: rgba(255, 255, 255, 0.1);
       --border-glow: rgba(0, 242, 254, 0.35);
 
@@ -600,354 +600,153 @@
     }
 
     /* ==========================================================================
-       8. ASSIGNMENTS SECTION (05. 과제 CARDS)
+       8. ASSIGNMENTS SECTION (05. 과제 HORIZONTAL WIDE CARDS)
        ========================================================================== */
-    .assignments-grid {
+    .assignments-list {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
-    .assignment-card {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(139, 92, 246, 0.12) 50%, rgba(0, 242, 254, 0.08) 100%);
-      border: 2px solid rgba(245, 158, 11, 0.4);
+    .assignment-wide-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 2.2rem;
+      padding: 2rem 2.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      transition: var(--transition-normal);
+      cursor: pointer;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      transition: var(--transition-normal);
+      backdrop-filter: blur(12px);
     }
 
-    .assignment-card:hover {
+    .assignment-wide-card.event-theme {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(22, 28, 45, 0.9) 100%);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+
+    .assignment-wide-card.trickcal-theme {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(22, 28, 45, 0.9) 100%);
+      border-color: rgba(236, 72, 153, 0.35);
+    }
+
+    .assignment-wide-card:hover {
+      transform: translateX(6px);
+      box-shadow: 0 12px 35px rgba(0, 242, 254, 0.18);
+    }
+
+    .assignment-wide-card.event-theme:hover {
       border-color: var(--gold);
-      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.25);
+      box-shadow: 0 12px 35px rgba(245, 158, 11, 0.25);
     }
 
-    .assignment-badge-bar {
+    .assignment-wide-card.trickcal-theme:hover {
+      border-color: var(--pink);
+      box-shadow: 0 12px 35px rgba(236, 72, 153, 0.25);
+    }
+
+    .assignment-wide-left {
+      flex: 1;
+    }
+
+    .assignment-badge-line {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       flex-wrap: wrap;
     }
 
     .assignment-badge {
-      background: rgba(245, 158, 11, 0.2);
-      border: 1px solid var(--gold);
-      color: #fde047;
-      padding: 0.25rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
+      padding: 0.2rem 0.75rem;
+      border-radius: 20px;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
     }
 
-    .assignment-title {
-      font-size: 1.7rem;
+    .assignment-badge.gold {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--gold);
+      color: #fde047;
+    }
+
+    .assignment-badge.pink {
+      background: rgba(236, 72, 153, 0.15);
+      border: 1px solid var(--pink);
+      color: #fbcfe8;
+    }
+
+    .assignment-wide-title {
+      font-size: 1.55rem;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
     }
 
-    .assignment-desc {
+    .assignment-wide-desc {
       color: #cbd5e1;
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .trend-tags-row {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.8rem;
-    }
-
-    .trend-tag {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      padding: 0.35rem 0.85rem;
-      border-radius: 6px;
-      font-size: 0.82rem;
-      color: #fef08a;
-    }
-
-    .trend-tag strong {
-      color: var(--cyan);
-    }
-
-    .assignment-actions-bar {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px dashed rgba(255, 255, 255, 0.15);
-    }
-
-    /* Embedded Simulator */
-    .simulator-container {
-      background: rgba(15, 18, 28, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .simulator-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.8rem;
-      margin-bottom: 1.2rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .simulator-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .sim-tabs {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .sim-tab-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 0.35rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-
-    .sim-tab-btn.active {
-      background: var(--purple);
-      border-color: var(--purple);
-      color: #ffffff;
-      font-weight: 700;
-    }
-
-    .sim-tab-content {
-      display: none;
-    }
-
-    .sim-tab-content.active {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .reward-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .reward-card {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 1rem;
-      text-align: center;
-      transition: var(--transition-fast);
-    }
-
-    .reward-card.claimed {
-      border-color: var(--green);
-      background: rgba(16, 185, 129, 0.1);
-    }
-
-    .reward-day {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-
-    .reward-icon {
-      font-size: 2.2rem;
-      margin: 0.5rem 0;
-    }
-
-    .reward-name {
-      font-weight: 700;
-      color: #ffffff;
       font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+      max-width: 760px;
     }
 
-    .reward-amount {
-      color: var(--cyan);
-      font-family: var(--font-code);
-      font-size: 0.88rem;
-    }
-
-    .claim-btn {
-      margin-top: 0.75rem;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      padding: 0.4rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-
-    .claim-btn:hover {
-      background: var(--cyan);
-      color: #000;
-      border-color: var(--cyan);
-    }
-
-    .claim-btn.disabled {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-dim);
-      border-color: transparent;
-      cursor: not-allowed;
-    }
-
-    .speed-sim-box {
+    .assignment-tags-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(30, 41, 59, 0.6);
-      padding: 1.25rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-color);
+      gap: 0.6rem;
       flex-wrap: wrap;
-      gap: 1rem;
     }
 
-    .speed-info h4 {
-      color: #ffffff;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .speed-info p {
+    .assignment-tag {
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.7rem;
+      border-radius: 6px;
       color: var(--text-muted);
-      font-size: 0.88rem;
     }
 
-    .toggle-switch {
-      position: relative;
-      width: 60px;
-      height: 32px;
-      background: #334155;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: var(--transition-normal);
+    .assignment-tag strong {
+      color: var(--cyan);
     }
 
-    .toggle-switch.on {
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
+    .assignment-wide-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.75rem;
+      min-width: 210px;
     }
 
-    .toggle-knob {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 26px;
-      height: 26px;
-      background: #ffffff;
-      border-radius: 50%;
-      transition: var(--transition-normal);
-    }
-
-    .toggle-switch.on .toggle-knob {
-      left: 31px;
-    }
-
-    .stepup-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-    }
-
-    .stepup-card {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem;
-      position: relative;
-    }
-
-    .stepup-card.locked {
-      opacity: 0.5;
-      filter: grayscale(0.6);
-    }
-
-    .stepup-badge {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-weight: 700;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    .stepup-badge.step1 { background: rgba(0, 242, 254, 0.15); color: var(--cyan); border: 1px solid var(--cyan); }
-    .stepup-badge.step2 { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid var(--gold); }
-
-    .stepup-price {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-
-    .stepup-items {
-      list-style: none;
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      margin-bottom: 1rem;
-    }
-
-    .stepup-items li {
-      margin-bottom: 0.25rem;
-    }
-
-    .stepup-buy-btn {
+    .assignment-open-btn {
       width: 100%;
-      background: linear-gradient(135deg, var(--gold) 0%, #d97706 100%);
-      color: #000;
+      justify-content: center;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.2rem;
+    }
+
+    .assignment-modal-btn {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: transparent;
       border: none;
-      padding: 0.5rem;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.88rem;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       transition: var(--transition-fast);
     }
 
-    .stepup-buy-btn:hover {
-      box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
-    }
-
-    .stepup-buy-btn:disabled {
-      background: #334155;
-      color: #94a3b8;
-      cursor: not-allowed;
-      box-shadow: none;
+    .assignment-modal-btn:hover {
+      color: var(--cyan);
     }
 
     /* ==========================================================================
@@ -1150,15 +949,22 @@
       background: rgba(0, 242, 254, 0.08);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 820px) {
       .hero {
         padding: 3rem 0 2rem 0;
       }
       .nav-links {
         display: none;
       }
-      .assignment-card {
+      .assignment-wide-card {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 1.5rem;
+      }
+      .assignment-wide-right {
+        width: 100%;
+        align-items: flex-start;
+        min-width: unset;
       }
       .modal-box {
         padding: 1.5rem;
@@ -1462,164 +1268,80 @@
       </div>
     </section>
 
-    <!-- 05. 과제 SECTION (2 ASSIGNMENT CARDS) -->
+    <!-- 05. 과제 SECTION (UNIFIED HORIZONTAL WIDE CARDS) -->
     <section id="assignments">
       <div class="section-header">
         <span class="section-num">05. ASSIGNMENTS &amp; PROPOSALS</span>
         <h2 class="section-title">기획 과제 &amp; 분석 문서</h2>
       </div>
 
-      <!-- Assignment Cards Container -->
-      <div class="assignments-grid">
+      <!-- Horizontal Wide Assignment Cards Container -->
+      <div class="assignments-list">
 
-        <!-- Assignment Card 1: 운빨존많겜 2026 한가위 대축제 -->
-        <article class="assignment-card">
-          <div class="assignment-badge-bar">
-            <span class="assignment-badge">
-              <i class="fa-solid fa-file-circle-check"></i> 라이브 서비스 기획 과제
-            </span>
-            <span style="font-size: 0.8rem; color: var(--gold); font-weight: 700;">
-              《트렌드 코리아 2026》 연계
-            </span>
+        <!-- Wide Card 1: 운빨존많겜 2026 한가위 대축제 -->
+        <article class="assignment-wide-card event-theme" onclick="openAssignmentTarget('./game-event-design/index.html')">
+          <div class="assignment-wide-left">
+            <div class="assignment-badge-line">
+              <span class="assignment-badge gold">
+                <i class="fa-solid fa-file-circle-check"></i> 라이브 서비스 기획 과제
+              </span>
+              <span style="font-size: 0.8rem; color: var(--gold); font-weight: 700;">
+                《트렌드 코리아 2026》 연계
+              </span>
+            </div>
+
+            <h3 class="assignment-wide-title">운빨존많겜 2026 한가위 풍년 대축제 기획서</h3>
+            <p class="assignment-wide-desc">
+              모바일 유저의 시성비 니즈(Ready Core), 확실한 성감(Feelconomy), 프리미엄 가성비 계산(Price Decoding)을 모바일 타워디펜스 라이브 이벤트 및 스텝업 BM에 접목한 기획 과제입니다.
+            </p>
+
+            <div class="assignment-tags-row">
+              <span class="assignment-tag"><strong>Ready Core</strong>: 2배속 전투 무료 &amp; VIP +3일 연장</span>
+              <span class="assignment-tag"><strong>Feelconomy</strong>: 다이아 3k / 신화석 100 / 불멸석 50 확정</span>
+              <span class="assignment-tag"><strong>Price Decoding</strong>: ₩5,500 ➔ ₩33,000 스텝업 IAP</span>
+            </div>
           </div>
 
-          <h3 class="assignment-title">운빨존많겜 2026 한가위 풍년 대축제 기획서</h3>
-          <p class="assignment-desc">
-            모바일 유저의 시간 효율성 니즈(Ready Core), 확실한 도파민 성감(Feelconomy), 프리미엄 가성비 계산(Price Decoding)을 결합하여 연휴 DAU 40% 증가 및 스텝업 IAP 결제 유도를 목표로 작성한 기획 과제입니다.
-          </p>
-
-          <div class="trend-tags-row">
-            <span class="trend-tag"><strong>레디코어 (Ready Core)</strong>: 2배속 전투 무료 + VIP 3일 자동 연장</span>
-            <span class="trend-tag"><strong>필코노미 (Feelconomy)</strong>: 다이아 3k / 신화석 100 / 불멸석 50 확정</span>
-            <span class="trend-tag"><strong>프라이스 디코딩 (Price Decoding)</strong>: ₩5,500 ➔ ₩33,000 스텝업 IAP</span>
-          </div>
-
-          <!-- Interactive Simulator Box -->
-          <div class="simulator-container">
-            <div class="simulator-header">
-              <div class="simulator-title">
-                <i class="fa-solid fa-laptop-code"></i> 기획 과제 인터랙티브 시뮬레이터 (미리보기)
-              </div>
-              <div class="sim-tabs">
-                <button class="sim-tab-btn active" onclick="switchSimTab(this, 'sim-attendance')">3일 출석 보상</button>
-                <button class="sim-tab-btn" onclick="switchSimTab(this, 'sim-speed')">2배속 버닝 체감</button>
-                <button class="sim-tab-btn" onclick="switchSimTab(this, 'sim-stepup')">스텝업 IAP 해금</button>
-              </div>
-            </div>
-
-            <!-- Tab 1: Attendance Sim -->
-            <div class="sim-tab-content active" id="sim-attendance">
-              <div class="reward-grid">
-                <div class="reward-card" id="reward-day1">
-                  <div class="reward-day">1일차 (명절 첫날)</div>
-                  <div class="reward-icon">💎</div>
-                  <div class="reward-name">다이아</div>
-                  <div class="reward-amount">3,000개</div>
-                  <button class="claim-btn" onclick="claimReward('reward-day1', '다이아 3,000개')">보상 수령</button>
-                </div>
-                <div class="reward-card" id="reward-day2">
-                  <div class="reward-day">2일차 (추석 당일)</div>
-                  <div class="reward-icon">🔮</div>
-                  <div class="reward-name">신화석 (핵심 육성)</div>
-                  <div class="reward-amount">100개</div>
-                  <button class="claim-btn" onclick="claimReward('reward-day2', '신화석 100개')">보상 수령</button>
-                </div>
-                <div class="reward-card" id="reward-day3">
-                  <div class="reward-day">3일차 (연휴 마지막)</div>
-                  <div class="reward-icon">⚡</div>
-                  <div class="reward-name">불멸석 (엔드 재화)</div>
-                  <div class="reward-amount">50개</div>
-                  <button class="claim-btn" onclick="claimReward('reward-day3', '불멸석 50개')">보상 수령</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab 2: Speed Sim -->
-            <div class="sim-tab-content" id="sim-speed">
-              <div class="speed-sim-box">
-                <div class="speed-info">
-                  <h4 id="speedTitle">전투 속도: 1배속 (평시 모드)</h4>
-                  <p id="speedDesc">한 판 소요 시간: <strong>22분</strong> | 이동 중 플레이 피로도: 높음</p>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.8rem;">
-                  <span style="font-size: 0.85rem; color: var(--text-muted);">2배속 버닝 온</span>
-                  <div class="toggle-switch" id="speedToggle" onclick="toggleSpeedSim()">
-                    <div class="toggle-knob"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tab 3: Step-up Sim -->
-            <div class="sim-tab-content" id="sim-stepup">
-              <div class="stepup-grid">
-                <div class="stepup-card" id="stepup1Card">
-                  <span class="stepup-badge step1">1단계: 한가위 복주머니</span>
-                  <div class="stepup-price">₩5,500</div>
-                  <ul class="stepup-items">
-                    <li>• 다이아 5,000개</li>
-                    <li>• 신화석 150개</li>
-                    <li>• 버닝 에너지 200개</li>
-                    <li style="color: var(--cyan); margin-top: 0.4rem;"><strong>* 상점 대비 400% 초고효율</strong></li>
-                  </ul>
-                  <button class="stepup-buy-btn" id="stepup1Btn" onclick="buyStepUp1()">1단계 구매 체험</button>
-                </div>
-
-                <div class="stepup-card locked" id="stepup2Card">
-                  <span class="stepup-badge step2">2단계: 보름달 대박 상자</span>
-                  <div class="stepup-price">₩33,000</div>
-                  <ul class="stepup-items">
-                    <li>• 다이아 20,000개</li>
-                    <li>• 불멸석 100개 (엔드 재화)</li>
-                    <li>• [한정] 달토끼 테두리 &amp; 프로필</li>
-                    <li style="color: var(--gold); margin-top: 0.4rem;"><strong>* 1단계 구매 시 해금!</strong></li>
-                  </ul>
-                  <button class="stepup-buy-btn" id="stepup2Btn" disabled onclick="buyStepUp2()">잠김 (1단계 필요)</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="assignment-actions-bar">
-            <a href="./game-event-design/index.html" target="_blank" class="btn btn-primary">
-              <i class="fa-solid fa-up-right-from-square"></i> 기획서 웹페이지 새 창으로 열기
+          <div class="assignment-wide-right">
+            <a href="./game-event-design/index.html" target="_blank" class="btn btn-primary assignment-open-btn" onclick="event.stopPropagation();">
+              <i class="fa-solid fa-up-right-from-square"></i> 문서 새 창으로 열기
             </a>
-            <button class="btn btn-secondary" onclick="openProjectModal('event-design')">
-              <i class="fa-solid fa-magnifying-glass"></i> 기획 요약 모달 팝업
+            <button class="assignment-modal-btn" onclick="event.stopPropagation(); openProjectModal('event-design');">
+              <i class="fa-solid fa-magnifying-glass"></i> 요약 모달 팝업
             </button>
           </div>
         </article>
 
-        <!-- Assignment Card 2: 트릭컬 리바이브 재미요소 분석서 -->
-        <article class="assignment-card" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(139, 92, 246, 0.12) 50%, rgba(0, 242, 254, 0.08) 100%); border-color: rgba(236, 72, 153, 0.4);">
-          <div class="assignment-badge-bar">
-            <span class="assignment-badge" style="background: rgba(236, 72, 153, 0.2); border-color: var(--pink); color: #fbcfe8;">
-              <i class="fa-solid fa-gamepad"></i> 시스템 역기획 과제
-            </span>
-            <span style="font-size: 0.8rem; color: var(--pink); font-weight: 700;">
-              플레이어 재미 메커니즘 분류
-            </span>
+        <!-- Wide Card 2: 트릭컬 리바이브 재미요소 분석서 -->
+        <article class="assignment-wide-card trickcal-theme" onclick="openAssignmentTarget('./trickcal-fun-elements/index.html')">
+          <div class="assignment-wide-left">
+            <div class="assignment-badge-line">
+              <span class="assignment-badge pink">
+                <i class="fa-solid fa-gamepad"></i> 시스템 역기획 과제
+              </span>
+              <span style="font-size: 0.8rem; color: var(--pink); font-weight: 700;">
+                플레이어 재미 메커니즘 분석
+              </span>
+            </div>
+
+            <h3 class="assignment-wide-title">트릭컬 리바이브 재미요소 &amp; 시스템 분석서</h3>
+            <p class="assignment-wide-desc">
+              "왜 재미있는가"를 기준으로 트릭컬 리바이브의 볼따구 상호작용, 성격 시너지 덱빌딩, 교단 본부 생산 랩, 테마극장 미니게임 등 18가지 핵심 재미 메커니즘을 분류하고 역기획한 과제 문서입니다.
+            </p>
+
+            <div class="assignment-tags-row">
+              <span class="assignment-tag"><strong>상호작용</strong>: 볼 당기기 / 쓰다듬기 / 사도 면접</span>
+              <span class="assignment-tag"><strong>덱빌딩</strong>: 성격 시너지 &amp; 코인 이자 자원 운용</span>
+              <span class="assignment-tag"><strong>순환 루프</strong>: 교단 본부 생산 랩 &amp; 테마극장</span>
+            </div>
           </div>
 
-          <h3 class="assignment-title">트릭컬 리바이브 재미요소 &amp; 시스템 분석서</h3>
-          <p class="assignment-desc">
-            "왜 재미있는가"를 기준으로 트릭컬 리바이브의 유쾌한 상호작용(볼따구), 성격 시너지 덱빌딩, 교단 본부 생산 랩, 테마극장 미니게임 등 18가지 핵심 재미 메커니즘을 세분화하여 분석한 과제 문서입니다.
-          </p>
-
-          <div class="trend-tags-row">
-            <span class="trend-tag" style="border-color: rgba(236, 72, 153, 0.3); color: #fbcfe8;"><strong>상호작용</strong>: 볼 당기기 / 쓰다듬기 / 사도 면접</span>
-            <span class="trend-tag" style="border-color: rgba(236, 72, 153, 0.3); color: #fbcfe8;"><strong>덱빌딩</strong>: 성격 시너지 &amp; 코인 이자 메커니즘</span>
-            <span class="trend-tag" style="border-color: rgba(236, 72, 153, 0.3); color: #fbcfe8;"><strong>순환 루프</strong>: 교단 본부 생산 랩 &amp; 테마극장</span>
-          </div>
-
-          <div class="assignment-actions-bar">
-            <a href="./trickcal-fun-elements/index.html" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);">
-              <i class="fa-solid fa-up-right-from-square"></i> 분석서 웹페이지 새 창으로 열기
+          <div class="assignment-wide-right">
+            <a href="./trickcal-fun-elements/index.html" target="_blank" class="btn btn-primary assignment-open-btn" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);" onclick="event.stopPropagation();">
+              <i class="fa-solid fa-up-right-from-square"></i> 문서 새 창으로 열기
             </a>
-            <button class="btn btn-secondary" onclick="openProjectModal('trickcal-fun')">
-              <i class="fa-solid fa-magnifying-glass"></i> 분석 요약 모달 팝업
+            <button class="assignment-modal-btn" onclick="event.stopPropagation(); openProjectModal('trickcal-fun');">
+              <i class="fa-solid fa-magnifying-glass"></i> 요약 모달 팝업
             </button>
           </div>
         </article>
@@ -1629,7 +1351,7 @@
 
   </main>
 
-  <!-- MODAL OVERLAY (POPUP DETAILS) -->
+  <!-- MODAL OVERLAY (PROJECT DETAIL VIEW) -->
   <div class="modal-backdrop" id="projectModal" onclick="closeModalOnBackdrop(event)">
     <div class="modal-box">
       <button class="modal-close-btn" onclick="closeModal()">
@@ -1784,7 +1506,15 @@
     };
 
     /* --------------------------------------------------------------------------
-       2. MODAL LOGIC
+       2. ASSIGNMENT WIDE CARD CLICK LOGIC
+       -------------------------------------------------------------------------- */
+    function openAssignmentTarget(url) {
+      playClickSFX(650, 0.08);
+      window.open(url, '_blank');
+    }
+
+    /* --------------------------------------------------------------------------
+       3. MODAL LOGIC
        -------------------------------------------------------------------------- */
     function openProjectModal(key) {
       const data = projectData[key];
@@ -1835,7 +1565,7 @@
     });
 
     /* --------------------------------------------------------------------------
-       3. CATEGORY FILTER LOGIC
+       4. CATEGORY FILTER LOGIC
        -------------------------------------------------------------------------- */
     function filterProjects(category, btnEl) {
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -1852,77 +1582,6 @@
         }
       });
       playClickSFX(520, 0.06);
-    }
-
-    /* --------------------------------------------------------------------------
-       4. FEATURED EVENT SIMULATOR LOGIC
-       -------------------------------------------------------------------------- */
-    function switchSimTab(btnEl, tabId) {
-      document.querySelectorAll('.sim-tab-btn').forEach(b => b.classList.remove('active'));
-      btnEl.classList.add('active');
-
-      document.querySelectorAll('.sim-tab-content').forEach(c => c.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      playClickSFX(580, 0.05);
-    }
-
-    function claimReward(cardId, rewardName) {
-      const card = document.getElementById(cardId);
-      const btn = card.querySelector('.claim-btn');
-
-      card.classList.add('claimed');
-      btn.innerText = '수령 완료 ✔';
-      btn.classList.add('disabled');
-      btn.onclick = null;
-
-      showToast(`🎁 [보상 수령] ${rewardName}이(가) 우편함으로 지급되었습니다!`);
-      playClickSFX(880, 0.12);
-    }
-
-    let speedOn = false;
-    function toggleSpeedSim() {
-      speedOn = !speedOn;
-      const toggle = document.getElementById('speedToggle');
-      const title = document.getElementById('speedTitle');
-      const desc = document.getElementById('speedDesc');
-
-      if (speedOn) {
-        toggle.classList.add('on');
-        title.innerHTML = '전투 속도: <span style="color: var(--cyan);">2배속 버닝 (이벤트 혜택 무료 적용중)</span>';
-        desc.innerHTML = '한 판 소요 시간: <strong style="color: var(--cyan);">10분 (시성비 2배 극대화!)</strong> | 기존 VIP 유저: <strong style="color: var(--gold);">구독 +3일 자동 연장!</strong>';
-        showToast('⚡ [레디코어 혜택] 2배속 모드가 활성화되어 한 판 플레이 시간이 10분으로 줄었습니다!');
-        playClickSFX(950, 0.1);
-      } else {
-        toggle.classList.remove('on');
-        title.innerText = '전투 속도: 1배속 (평시 모드)';
-        desc.innerHTML = '한 판 소요 시간: <strong>22분</strong> | 이동 중 플레이 피로도: 높음';
-        playClickSFX(450, 0.05);
-      }
-    }
-
-    function buyStepUp1() {
-      const step1Btn = document.getElementById('stepup1Btn');
-      step1Btn.innerText = '구매 완료 ✔';
-      step1Btn.disabled = true;
-
-      const step2Card = document.getElementById('stepup2Card');
-      step2Card.classList.remove('locked');
-
-      const step2Btn = document.getElementById('stepup2Btn');
-      step2Btn.innerText = '2단계 구매하기 (₩33,000)';
-      step2Btn.disabled = false;
-
-      showToast('💳 [Price Decoding] 1단계 패키지 구매 완료! 2단계 보름달 대박 상자가 해금되었습니다.');
-      playClickSFX(750, 0.12);
-    }
-
-    function buyStepUp2() {
-      const step2Btn = document.getElementById('stepup2Btn');
-      step2Btn.innerText = '2단계 구매 완료 ✔';
-      step2Btn.disabled = true;
-
-      showToast('🌕 [최종 해금] 2단계 구매 완료! 불멸석 100개와 한정 달토끼 프로필이 지급되었습니다.');
-      playClickSFX(1050, 0.15);
     }
 
     /* --------------------------------------------------------------------------
