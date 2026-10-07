@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모바일인덱스 실시간 순위 TOP 50 플레이 분석서 | 최찬우 게임 기획 과제</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Pretendard:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 28, 45, 0.85);
+      --border-color: rgba(255, 255, 255, 0.12);
+      --cyan: #00f2fe;
+      --purple: #8b5cf6;
+      --gold: #f59e0b;
+      --green: #10b981;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Pretendard', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      word-break: keep-all;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(139, 92, 246, 0.15) 50%, rgba(16, 185, 129, 0.1) 100%);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    p.lead {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .search-box {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.6rem 1.2rem;
+      color: #ffffff;
+      font-size: 0.95rem;
+      width: 300px;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .search-box:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+    }
+
+    .table-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1rem;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(30, 41, 59, 0.9);
+      color: var(--cyan);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .rank-num {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      color: var(--gold);
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .progress-badge {
+      background: rgba(0, 242, 254, 0.12);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .genre-tag {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="../index.html#assignments" class="back-link">
+        <i class="fa-solid fa-arrow-left"></i> 포트폴리오로 돌아가기
+      </a>
+      <h1>모바일인덱스 실시간 순위 TOP 50 플레이 분석서</h1>
+      <p class="lead">
+        2026년 9월 기준 국내 모바일 게임 실시간 매출 순위 TOP 50 전 종목 대상. 실제 유저들의 플레이 경험을 바탕으로 **15분 플레이 시 도달하는 현실적인 레벨/스테이지 및 솔직한 기획 리뷰**를 밀착 조사한 과제 문서입니다.
+      </p>
+    </header>
+
+    <div class="controls-bar">
+      <input type="text" id="searchInput" class="search-box" placeholder="🔍 게임명 또는 장르 검색..." onkeyup="filterTable()">
+      <span style="font-size: 0.88rem; color: var(--text-muted);">총 50개 모바일 게임 데이터 수록</span>
+    </div>
+
+    <div class="table-card">
+      <table id="rankTable">
+        <thead>
+          <tr>
+            <th style="width: 60px; text-align: center;">순위</th>
+            <th style="width: 180px;">게임명</th>
+            <th style="width: 160px;">15분 플레이 달성 기준</th>
+            <th style="width: 120px;">장르</th>
+            <th>15분 현실 플레이 후기 및 분석 소감</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const gameData = [
+      { rank: 1, name: "제우스: 오만의 신", progress: "7~10lv", genre: "RPG", review: "인물 그래픽은 진짜 잘 뽑혔고 자동사냥이 기본으로 적용돼있음. 근데 완전 방치형은 아니라 중간중간 퀘스트 터치해줘야 해서 화면 계속 신경 쓰게 됨." },
+      { rank: 2, name: "리니지M", progress: "30lv", genre: "MMORPG", review: "정통 MMORPG 방식답게 메인 퀘스트 버튼만 계속 누르면 15분 만에 30렙은 금방 찍음. 하지만 장비 세팅이랑 스탯 확인을 계속해줘야 해서 손을 못 뗌." },
+      { rank: 3, name: "SOL: enchant", progress: "20lv", genre: "MMORPG", review: "오딘 느낌 나는 자동전투 중심 MMORPG. 초반 퀘스트 렙업 속도는 꽤 빠른 편인데 전투 타격감이 살짝 밋밋하고 반복 사냥 구간이 일찍 옴." },
+      { rank: 4, name: "WOS: 화이트아웃 서바이벌", progress: "영지 5lv", genre: "전략 SLG", review: "설원 생존이랑 영지 건설을 합친 게임. 처음 15분 동안은 건물 업그레이드가 팍팍 되는데, 조금만 지나면 건설 대기 시간이 길어져서 가끔 접속하는 게 편함." },
+      { rank: 5, name: "킹샷:Kingshot", progress: "영지 5lv", genre: "전략 SLG", review: "왕국 키우는 맛이 쏠쏠함. 초반엔 건물 짓고 영웅 모으는 속도가 빠른 편인데 곧 건설 대기가 생겨서 붙잡고 있기보다는 주기적 접속이 답임." },
+      { rank: 6, name: "오딘: 발할라 라이징", progress: "20lv", genre: "MMORPG", review: "북유럽 신화 배경이라 그래픽 시원하고 필드 구경하는 맛이 좋음. 자동사냥 잘 되어있는데 중간중간 몬스터 처치 퀘스트가 섞여서 플레이 시간이 은근 길어짐." },
+      { rank: 7, name: "메이플 키우기", progress: "25lv / Stage 20", genre: "방치형 RPG", review: "메이플 IP 귀여운 감성 그대로임. 초반 15분 동안은 퀘스트 따라가면 레벨 쑥쑥 오르는데, 스테이지 막히는 시점부터 장비 강화랑 재화 관리가 핵심이 됨." },
+      { rank: 8, name: "로블록스 (Roblox)", progress: "미니게임 2~3개", genre: "샌드박스", review: "미니게임 천국이라 15분만 접속해도 맵 2~3개 가볍게 찍먹 가능함. 다만 게임마다 조작법이나 완성도가 천차만별이라 적응할 시간이 살짝 필요함." },
+      { rank: 9, name: "로얄 매치 (Royal Match)", progress: "20 스테이지", genre: "퍼즐", review: "3매치 퍼즐이라 조작 쉬운 건 물론이고 한 판이 1분 남짓이라 스피디함. 근데 15스테이지 넘어가면 횟수 아슬아슬해져서 자연스럽게 아이템 쓰게 만듦." },
+      { rank: 10, name: "가십하버: 합성 & 스토리", progress: "레벨 5", genre: "머지 퍼즐", review: "같은 아이템 합쳐서 요리 만들고 레스토랑 꾸미는 머지 게임. 초반 스토리 진행 빠른데 에너지가 15분 만에 바닥나서 연달아 플레이하긴 힘듦." },
+      { rank: 11, name: "한게임포커 클래식", progress: "초보 채널 5~10판", genre: "카지노/포커", review: "7포커랑 홀덤 한 판이 1분도 안 걸려서 15분 동안 찰지게 여러 판 치기 좋음. 레벨업보단 내 포커머니 관리하는 게 핵심인 게임." },
+      { rank: 12, name: "쿠키런 키우기 - 크럼블", progress: "5lv / Stage 15", genre: "방치형 RPG", review: "쿠키 귀엽고 튜토리얼이 되게 친절함. 보스 잡으면서 팀 강화하는 재미가 쏠쏠하고 초반에 퍼주는 퍼주기 재화가 많아서 15분 동안 신나게 함." },
+      { rank: 13, name: "열혈강호: 넥스트", progress: "15~20lv (1차 전직)", genre: "MMORPG", review: "무협 자동사냥 게임이라 퀘스트 버튼만 눌러도 15분 만에 1차 전직까지 일사천리임. 근데 전직 끝나고 나면 바로 반복 자동사냥 구간 들어감." },
+      { rank: 14, name: "라스트 워: 서바이벌", progress: "본부 5lv", genre: "전략 SLG", review: "광고에서 보던 좀비 사격 미니게임으로 시작해서 기지 세우는데 초반 몰입감은 꽤 좋음. 다만 뒤로 갈수록 기지 건설 대기 시간이랑 연맹 콘텐츠 위주로 변함." },
+      { rank: 15, name: "운빨존많겜", progress: "20~40 웨이브", genre: "타워 디펜스", review: "15분이면 한 판 가득 채워 하는데 영웅 뽑기 운빨에 따라 20웨이브에서 터지냐 40웨이브 가냐가 갈림. 손맛이랑 쫄깃함 하나는 인정함." },
+      { rank: 16, name: "승리의 여신: 니케", progress: "캠페인 2챕터", genre: "수집형 슈팅", review: "캐릭터 일러스트랑 엄폐 사격 손맛은 확실함. 자동 전투 지원되지만 캐릭터 버스트 조합이랑 장비 세팅은 직접 신경 써서 조합해야 깸." },
+      { rank: 17, name: "마비노기 모바일", progress: "10lv", genre: "생활형 MMORPG", review: "메인 퀘스트 따라가며 전투하는 건 쉬운데 채집하고 요리하고 아르바이트까지 건드리다 보면 15분이 진짜 순식간에 지나감. 소소하게 할 게 많음." },
+      { rank: 18, name: "FC 모바일", progress: "3경기 진행", genre: "스포츠/축구", review: "선수 조작감 나쁘지 않고 한 경기 3분 내외라 가볍게 하기 좋음. 다만 이적시장에서 선수 사고 라인업 짜는 메뉴 시간이 경기 시간보다 길어짐." },
+      { rank: 19, name: "씨사이드 익스케이프", progress: "레벨 5", genre: "머지 퍼즐", review: "섬 휴양지 꾸미면서 재료 합치는 맛이 쏠쏠함. 초반엔 합성 속도 빨라서 신나는데 에너지가 금방 바닥나서 15분 지나면 잠깐 쉬어야 함." },
+      { rank: 20, name: "삼국지: 천하결전", progress: "영지 5lv", genre: "전략 SLG", review: "초반 장수 뽑기권을 넉넉하게 줘서 무장 덱 짜는 재미가 있음. 대신 출전 체력 소모가 있어서 무작정 영지 칠 순 없고 자원 계산하며 쳐야 함." },
+      { rank: 21, name: "테이스티 트레블", progress: "레벨 5", genre: "머지 퍼즐", review: "음식 재료 합성 퍼즐인데 초반 합치는 손맛은 진짜 입에 짝 붙음. 근데 15분 넘어가면 쿨타임이랑 에너지 제한 걸려서 진득하게는 못 함." },
+      { rank: 22, name: "명조: 워더링 웨이브", progress: "5lv / 튜토리얼", genre: "오픈월드 액션", review: "패링이랑 회피 손맛이 확실해서 수동 조작 재미는 모바일 탑급임. 대신 15분 동안 스킬, 에코, 회피 타이밍 공부할 게 많아서 적응 필요함." },
+      { rank: 23, name: "피망 포커 : 카지노 로얄", progress: "초보 채널 10판", genre: "카지노/포커", review: "7포커랑 바둑이 패 돌리는 속도가 빠르고 15분 동안 머니 오르락내리락하는 긴장감이 있음. 판 돈 조절만 잘하면 가볍게 즐기기 딱임." },
+      { rank: 24, name: "꿈의 정원 (Gardenscapes)", progress: "15 스테이지", genre: "매치3 퍼즐", review: "집 꾸미기랑 퍼즐이 합쳐진 게임으로 초반은 쉬운데 10스테이지 지나면 장애물 생겨서 운이 좀 따라줘야 깸." },
+      { rank: 25, name: "라스트 Z: 서바이벌 슈터", progress: "5lv / 3스테이지", genre: "슈팅/전략", review: "좀비 몰려오는 거 총 쏴서 막는 재미로 시작해서 기지 넓히는데 초반 속도감은 꽤 괜찮음." },
+      { rank: 26, name: "컴투스프로야구V26", progress: "2경기 진행", genre: "스포츠/야구", review: "그래픽 현실감 있고 타격감 좋은 야구 게임이라 15분 동안 2경기 정도 라이브 타격 맛보기 딱 좋음." },
+      { rank: 27, name: "Pokémon GO", progress: "5lv (체육관 해금)", genre: "AR/수집", review: "직접 걸어다니며 포켓몬 볼 던져 잡는 게임으로 15분 동네 한 바퀴 도는 동안 포켓몬 10마리쯤 잡고 체육관 열림." },
+      { rank: 28, name: "라스트 어사일럼: 페스트", progress: "본부 5lv", genre: "전략 SLG", review: "어두운 아포칼립스 분위기 전략 게임으로 튜토리얼 퀘스트 누르면 기지 뚝딱 세워지지만 곧 자원 대기 생김." },
+      { rank: 29, name: "EA SPORTS FC Online M", progress: "감독모드 2판", genre: "스포츠", review: "PC 온라인 연동용이라 직접 조작보다는 감독모드 자동 돌리거나 선수 이적시장 시세 확인하기 좋음." },
+      { rank: 30, name: "뱀피르", progress: "15lv", genre: "다크 MMORPG", review: "뱀파이어 컨셉 어두운 MMORPG로 자동 사냥 돌려놓으면 렙업은 빠른데 몬스터 수확하고 장비 맞추는 작업이 계속 들어감." },
+      { rank: 31, name: "로얄 킹덤 (Royal Kingdom)", progress: "15 스테이지", genre: "퍼즐", review: "로얄매치 후속작 느낌 퍼즐로 블록 터지는 연출이 화려하고 타격감 좋은데 난이도는 뒤로 갈수록 꽤 매워짐." },
+      { rank: 32, name: "협타디: 협동 타워 디펜스", progress: "1~2판 (웨이브 30)", genre: "타워 디펜스", review: "다른 유저랑 둘이서 몹 막아내는 타워디펜스로 타워 배치 협동하는 재미가 있고 한 판에 7~8분 걸림." },
+      { rank: 33, name: "뚜까펫: 서바이벌", progress: "5스테이지", genre: "뱀서라이크", review: "귀여운 펫으로 몬스터 떼거지 탕탕 막아내는 뱀서류 게임이라 15분 동안 스킬 조합하면서 몬스터 쓸어담는 재미가 있음." },
+      { rank: 34, name: "메이플스토리M", progress: "20~25lv", genre: "모바일 MMORPG", review: "원작 메이플 느낌 그대로 모바일로 옮겨왔는데 자동 이동이랑 자동 사냥이 잘 되어 있어서 초반 20렙 퀘스트는 순식간임." },
+      { rank: 35, name: "소녀전선2: 망명", progress: "1챕터 완료", genre: "턴제 전략 RPG", review: "엑스컴 스타일 턴제 사격 전략 게임으로 엄폐물 끼고 쏘는 재미가 훌륭한데 15분 동안은 튜토리얼 전투 배우는 단계임." },
+      { rank: 36, name: "트릭컬 리바이브", progress: "1챕터 / 10lv", genre: "수집형 오토배틀러", review: "캐릭터 볼따구 당기는 귀여운 연출이 미쳤고 15분 동안 덱 짜고 자동 전투 보면서 사도들 구경하는 맛이 쏠쏠함." },
+      { rank: 37, name: "할리우드 머지", progress: "레벨 5", genre: "머지 퍼즐", review: "영화 세트장 꾸미면서 아이템 합치는 머지 게임인데 초반 스토리 흘러가는 건 유쾌하고 에너지 다 달면 잠시 대기해야 함." },
+      { rank: 38, name: "로그W : 리메인즈 오브 갓", progress: "15lv", genre: "로그라이크 RPG", review: "로그라이크 요소 섞인 다크 판타지 RPG로 던전 탐험하면서 선택지 고르는 재미가 있는데 사망 시 리셋 부담이 약간 있음." },
+      { rank: 39, name: "리니지W", progress: "25lv", genre: "MMORPG", review: "글로벌 서버 어두운 리니지로 퀘스트 타격감이랑 스토리 몰입감은 괜찮으나 초반 넘어가면 역시 무한 자동사냥 구간으로 들어감." },
+      { rank: 40, name: "뮤 모나크2", progress: "30lv", genre: "레트로 MMORPG", review: "옛날 뮤 온라인 감성 그대로 살린 사냥 게임이라 15분 동안 퀘스트 누르면 렙 30까지 일사천리로 시원하게 올라감." },
+      { rank: 41, name: "에픽세븐", progress: "1챕터 5스테이지", genre: "수집형 턴제 RPG", review: "2D 애니메이션 연출이 진짜 화려해서 스킬 보는 맛이 확실함. 다만 초반 캐릭터 쫄작이랑 장비 세팅할 공부거리가 많음." },
+      { rank: 42, name: "이환", progress: "5lv / 튜토리얼", genre: "서브컬처 오픈월드", review: "도시 배경 서브컬처 오픈월드 액션 게임으로 차량 운전이랑 벽 타는 액션은 재미있는데 초반 스토리 지문이 꽤 긴 편임." },
+      { rank: 43, name: "WPL : 홀덤, 토너먼트", progress: "토너먼트 1판", genre: "카지노/스포츠", review: "정통 텍사스 홀덤 게임으로 토너먼트 한 판 참여해서 심리전 치는 손맛이 있고 방송 연동도 깔끔함." },
+      { rank: 44, name: "캔디크러쉬사가", progress: "20 스테이지", genre: "퍼즐", review: "퍼즐 게임의 조상님답게 15분 동안 사탕 팡팡 터뜨리는 쾌감이 좋고 초반 15~20판은 아이템 없이 손쉽게 쭉쭉 깨짐." },
+      { rank: 45, name: "미스터리 타운: 합성 게임", progress: "레벨 5", genre: "머지 퍼즐", review: "마을 비밀 파헤치며 아이템 합치는 머지 게임으로 오브젝트 합치는 속도감은 좋은데 에너지가 15분이면 딱 고갈됨." },
+      { rank: 46, name: "블루 아카이브", progress: "임무 1-4 / 5lv", genre: "수집형 학원 RPG", review: "귀여운 학생들 3D SD 모델링 전투와 학원 스토리 분위기가 밝고 좋음. 초반 15분 동안 1-4 깨고 리세마라 픽업 뽑기 진행." },
+      { rank: 47, name: "붕괴: 스타레일", progress: "은하열차 승선 / 5lv", genre: "턴제 RPG", review: "턴제 전투 타격감이랑 그래픽 연출이 압도적임. 15분 동안 은하열차 타고 다음 행성 이동하는 메인 스토리 감상." },
+      { rank: 48, name: "드래곤빌리지3", progress: "15lv / 5마리 부화", genre: "방치형/수집", review: "귀여운 드래곤 알 까고 드래곤 육성하는 게임으로 100뽑 이벤트 혜택 덕분에 15분 동안 드래곤 떼거지로 획득." },
+      { rank: 49, name: "배틀그라운드 모바일", progress: "1경기 (TOP 5)", genre: "배틀로얄 FPS", review: "모바일 조작 에임 보정이 잘 되어 있어서 15분 한 경기 뛰면 보트 타고 조심조심 들어가서 10킬 사살 및 TOP 5 달성." },
+      { rank: 50, name: "명일방주: 엔드필드", progress: "튜토리얼 / 건설 3lv", genre: "실시간 전략 RPG", review: "명일방주 세계관 기반의 공장 건설 &amp; 실시간 전략 전투로 15분 동안 탐사 튜토리얼 진행하며 첫 기지 건설." }
+    ];
+
+    function renderTable(data) {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+      data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="rank-num">${item.rank}</td>
+          <td style="font-weight: 700; color: #ffffff;">${item.name}</td>
+          <td><span class="progress-badge">${item.progress}</span></td>
+          <td><span class="genre-tag">${item.genre}</span></td>
+          <td style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">${item.review}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterTable() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = gameData.filter(g => 
+        g.name.toLowerCase().includes(query) || 
+        g.genre.toLowerCase().includes(query) ||
+        g.review.toLowerCase().includes(query)
+      );
+      renderTable(filtered);
+    }
+
+    renderTable(gameData);
+  </script>
+</body>
+</html>

@@ -634,6 +634,11 @@
       border-color: rgba(236, 72, 153, 0.35);
     }
 
+    .assignment-wide-card.mobileindex-theme {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.08) 0%, rgba(79, 70, 229, 0.12) 50%, rgba(22, 28, 45, 0.9) 100%);
+      border-color: rgba(0, 242, 254, 0.35);
+    }
+
     .assignment-wide-card:hover {
       transform: translateX(6px);
       box-shadow: 0 12px 35px rgba(0, 242, 254, 0.18);
@@ -647,6 +652,11 @@
     .assignment-wide-card.trickcal-theme:hover {
       border-color: var(--pink);
       box-shadow: 0 12px 35px rgba(236, 72, 153, 0.25);
+    }
+
+    .assignment-wide-card.mobileindex-theme:hover {
+      border-color: var(--cyan);
+      box-shadow: 0 12px 35px rgba(0, 242, 254, 0.25);
     }
 
     .assignment-wide-left {
@@ -681,6 +691,12 @@
       background: rgba(236, 72, 153, 0.15);
       border: 1px solid var(--pink);
       color: #fbcfe8;
+    }
+
+    .assignment-badge.cyan {
+      background: rgba(0, 242, 254, 0.15);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
     }
 
     .assignment-wide-title {
@@ -1014,7 +1030,7 @@
       </h1>
 
       <p class="hero-sub">
-        유한대학교 게임콘텐츠학과에서 보드게임 시스템부터 2D 서바이벌, 격투, NPC FSM 프로그래밍, 라이브 이벤트 BM 프로모션 및 트릭컬 리바이브 재미요소 역기획 과제까지 독특한 플레이 메커니즘을 설계하고 구현해 왔습니다.
+        유한대학교 게임콘텐츠학과에서 보드게임 시스템부터 2D 서바이벌, 격투, NPC FSM 프로그래밍, 라이브 이벤트 BM 프로모션, 트릭컬 리바이브 재미요소 역기획, 모바일 매출 TOP 50 플레이 분석 과제까지 독특한 플레이 메커니즘을 설계하고 구현해 왔습니다.
       </p>
 
       <div class="hero-actions">
@@ -1036,8 +1052,8 @@
           <div class="stat-label">완성 게임 프로젝트</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">2</div>
-          <div class="stat-label">기획 분석 &amp; 이벤트 과제</div>
+          <div class="stat-num">3</div>
+          <div class="stat-label">기획 분석 &amp; 과제 문서</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">4회</div>
@@ -1346,6 +1362,40 @@
           </div>
         </article>
 
+        <!-- Wide Card 3: 모바일인덱스 실시간 순위 TOP 50 분석 -->
+        <article class="assignment-wide-card mobileindex-theme" onclick="openAssignmentTarget('./mobile-index-top50/index.html')">
+          <div class="assignment-wide-left">
+            <div class="assignment-badge-line">
+              <span class="assignment-badge cyan">
+                <i class="fa-solid fa-chart-simple"></i> 모바일 게임 시장 분석 과제
+              </span>
+              <span style="font-size: 0.8rem; color: var(--cyan); font-weight: 700;">
+                매출 순위 TOP 50 플레이 밀착 검증
+              </span>
+            </div>
+
+            <h3 class="assignment-wide-title">모바일인덱스 실시간 순위 TOP 50 플레이 분석서</h3>
+            <p class="assignment-wide-desc">
+              국내 모바일 게임 매출 TOP 50 전 종목을 대상으로 15분 플레이 시 도달하는 현실적인 레벨/스테이지 및 실제 플레이어 후기와 기획 리뷰를 밀착 분석한 과제 문서입니다.
+            </p>
+
+            <div class="assignment-tags-row">
+              <span class="assignment-tag"><strong>진행도 검증</strong>: 15분 플레이 기준 현실 레벨 &amp; 스테이지 산출</span>
+              <span class="assignment-tag"><strong>TOP 50 분석</strong>: MMORPG / SLG / 방치형 / 퍼즐 / 서브컬처</span>
+              <span class="assignment-tag"><strong>플레이 리뷰</strong>: 유저 솔직 후기 기반 튜토리얼 &amp; 체감 허들 도출</span>
+            </div>
+          </div>
+
+          <div class="assignment-wide-right">
+            <a href="./mobile-index-top50/index.html" target="_blank" class="btn btn-primary assignment-open-btn" style="background: linear-gradient(135deg, #00f2fe 0%, #4f46e5 100%); box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);" onclick="event.stopPropagation();">
+              <i class="fa-solid fa-up-right-from-square"></i> 문서 새 창으로 열기
+            </a>
+            <button class="assignment-modal-btn" onclick="event.stopPropagation(); openProjectModal('mobile-index');">
+              <i class="fa-solid fa-magnifying-glass"></i> 요약 모달 팝업
+            </button>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -1465,6 +1515,23 @@
         extraLink: {
           text: '분석서 웹페이지 새 창으로 열기',
           url: './trickcal-fun-elements/index.html'
+        }
+      },
+      'mobile-index': {
+        title: '모바일인덱스 실시간 순위 TOP 50 플레이 분석서',
+        category: '모바일 게임 시장 분석 &amp; 플레이 검증 과제',
+        role: '게임 시장 분석자',
+        date: '2026.09',
+        engine: 'Market Data / Play Analysis',
+        desc: '국내 모바일 매출 TOP 50 게임 전 종목을 대상으로 15분 플레이 시 도달하는 레벨/스테이지 및 유저 플레이 후기를 솔직하고 현실적으로 정리한 시장 분석 과제입니다.',
+        details: [
+          '<strong>TOP 50 전 종목 15분 진행도 검증:</strong> MMORPG(30lv), 퍼즐(15~20스테이지), SLG(영지 5lv), 타워디펜스(20~40웨이브) 등 현실적인 15분 달성 레벨 명확화.',
+          '<strong>유저 솔직 후기 기반 기획 리뷰:</strong> 자동사냥과 완방형의 차이, 에너지 고갈 시점, 초반 튜토리얼 이탈 허들 도출.',
+          '<strong>장르별 플레이 특성 패턴화:</strong> 방치형, 머지 퍼즐, 서브컬처, SLG 장르별 15분 플레이 경험 순환 루프 분석.'
+        ],
+        extraLink: {
+          text: '분석서 웹페이지 새 창으로 열기',
+          url: './mobile-index-top50/index.html'
         }
       },
       'last-warrior': {
